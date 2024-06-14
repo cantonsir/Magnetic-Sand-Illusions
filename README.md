@@ -5,6 +5,12 @@ These notebooks illustrate the data analysis from different psychophysics experi
 ## Figures
 
 ### Parameter Space
+
+.. image:: https://colab.research.google.com/assets/colab-badge.svg
+        :alt: Open In Colab
+        :target: https://colab.research.google.com/github/jeshraghian/snntorch/blob/master/examples/quickstart.ipynb
+
+        
 ![Parameter Space](Figure/Parameter_Space.png)
 
 ### Statics vs Dynamics
