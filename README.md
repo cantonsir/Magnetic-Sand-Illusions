@@ -5,7 +5,7 @@ These notebooks illustrate the data analysis from different psychophysics experi
 ## Figures
 
 ### Parameter Space
-![Parameter Space](Figure/Parameter Space.png)
+![Parameter Space](Figure/Parameter_Space.png)
 
 ### Statics vs Dynamics
 ![Statics vs Dynamics](Figure/Statics_vs_Dynamics.png)
