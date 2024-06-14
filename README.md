@@ -6,7 +6,7 @@ A demo of the **Magnetic Sand Illusion** can be found [here](https://sites.googl
 
 The following Jupyter Notebooks include noise video generation and data analysis from different psychophysics experiments as published in the paper. All experimental data, data preprocessing, and visualizations are included in these notebooks.
 
-**All data can be downloaded from Google Drive. The link to the data download is inside the Jupyter Notebooks below.**
+**The link to the data download is inside the Jupyter Notebooks below.**
 
 ## Videos
 
