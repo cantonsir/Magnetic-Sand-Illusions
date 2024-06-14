@@ -2,7 +2,7 @@
 
 This repository contains the code for generating figures from the paper "Magnetic Sand Illusions" by Shimojo et al., BioRxiv 2024.
 
-A demo of the magnetic sand illusion can be found [here](https://sites.google.com/view/magneticsand).
+A demo of the **Magnetic Sand Illusion** can be found [here](https://sites.google.com/view/magneticsand).
 
 The following Jupyter Notebooks illustrate the data analysis from different psychophysics experiments as published in the paper. All the experimental data, data preprocessing, and visualizations are included in these notebooks.
 
