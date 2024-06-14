@@ -1,16 +1,14 @@
 # Magnetic-Sand-Illusions
 
-These notebook illustrates the data analysis from the different psychophycisc experienmebt as published in Shimojo et al., BioRxiv 2024. 
+These notebooks illustrate the data analysis from different psychophysics experiments as published in Shimojo et al., BioRxiv 2024.
 
+## Figures
 
+### Parameter Space
+![Parameter Space](Figure/Parameter_Space.png)
 
+### Statics vs Dynamics
+![Statics vs Dynamics](Figure/Statics_vs_Dynamics.png)
 
-![alt text](Figure/Parameter Space.png)
-
-
-
-![alt text](Figure/Statics vs Dynamics.png)
-
-
-
-![alt text](Figure/Self vs Other.png)
+### Self vs Other
+![Self vs Other](Figure/Self_vs_Other.png)
