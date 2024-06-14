@@ -4,9 +4,9 @@ This repository contains the code for generating noise videos and results from t
 
 A demo of the **Magnetic Sand Illusion** can be found [here](https://sites.google.com/view/magneticsand).
 
-The following Jupyter Notebooks include noise video generation and data analysis from different psychophysics experiments as published in the paper. All experimental data, data preprocessing, and visualizations are included in these notebooks.
+The following Jupyter Notebooks include noise video generation and data analysis from different psychophysics experiments as published in the paper. **All experimental data, data preprocessing, and visualizations are included in these notebooks.**
 
-**The link to the data download is inside the Jupyter Notebooks below.**
+
 
 ## Videos
 
