@@ -1,6 +1,6 @@
 # Magnetic-Sand-Illusions
 
-This repository contains the code for generating noise videos and results from the paper "Magnetic Sand Illusions" by Shimojo et al., BioRxiv 2024 [here](https://www.biorxiv.org/content/10.1101/2024.07.03.598775v1).
+This repository contains the code for generating noise videos and results from the paper "Magnetic Sand Illusions" by [Shimojo et al., BioRxiv 2024](https://www.biorxiv.org/content/10.1101/2024.07.03.598775v1).
 
 A demo of the **Magnetic Sand Illusion** can be found [here](https://sites.google.com/view/magneticsand).
 
