@@ -75,6 +75,3 @@ Here is an overview of the main directories and files in the repository:
 - **Figure/**: Contains images and visualizations from the experiments, including results from the analysis notebooks.
 
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
