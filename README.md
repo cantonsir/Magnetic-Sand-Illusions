@@ -37,7 +37,14 @@ This repository provides Jupyter Notebooks and Python scripts to generate noise 
 
         [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Parameter_Space.ipynb)
    
-     ![Parameter Space](Figure/Parameter_Space.png)
+     ### Mean Illusions
+     ![Mean Illusions](Figure/illusions_mean.svg)
+
+     ### Perception Maps
+     ![Perception Maps](Figure/Perception_maps.svg)
+
+     ### Trajectories by Illusion
+     ![Trajectories by Illusion](Figure/Trajectories_by_Illusion.svg)
    
    - **Comparison of Dynamic vs. Static Noises**:
    
@@ -47,7 +54,7 @@ This repository provides Jupyter Notebooks and Python scripts to generate noise 
 
         [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Statics_vs_Dynamics.ipynb)
 
-     ![Dynamic vs Static](Figure/Statics_vs_Dynamics.png)
+     ![Dynamics vs Statics](Figure/Dynamics_vs_statics_RM_bootstrapCI.svg)
    
    - **Self Action vs. Observing Others**:
    
@@ -56,7 +63,7 @@ This repository provides Jupyter Notebooks and Python scripts to generate noise 
      [Self vs. Other Notebook](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Self_vs_Other.ipynb)
 
         [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Self_vs_Other.ipynb)   
-     ![Self vs Other](Figure/Self_vs_Other.png)
+     ![Self vs Other](Figure/Self_vs_Other.svg)
 
 ## Data and Analysis
 
