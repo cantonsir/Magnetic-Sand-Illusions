@@ -1,8 +1,8 @@
 import { noiseFrame } from './noise.js';
-import { content } from './content.js?v=hands5';
-import { createHandGuide } from './hand-guide.js?v=hands5';
+import { content } from './content.js?v=elegant1';
+import { createHandGuide } from './hand-guide.js?v=elegant1';
 const $ = id => document.getElementById(id);
-const grains = [1,2,4,8,16], colors = ['#edc77a','#ee9b8f','#89d9cd','#b2a4ee'];
+const grains = [1,2,4,8,16], colors = ['#0071e3','#0071e3','#0071e3','#0071e3'];
 const storageKey = 'magnetic-sand-real-hands-v2';
 let persisted = {};
 try { persisted=JSON.parse(localStorage.getItem(storageKey)||'{}')||{}; } catch {}
@@ -220,7 +220,7 @@ document.addEventListener('fullscreenchange',()=>{resize();updateFullscreenLabel
 document.addEventListener('visibilitychange',()=>{if(document.hidden){if(state.running)stop(t('hiddenPause'));stopTutorial();}});window.addEventListener('pagehide',()=>{stop();stopTutorial();});
 document.addEventListener('keydown',event=>{
  if(event.key==='Escape'){stop();stopTutorial();return;}
- if($('science-dialog').open||['INPUT','SELECT','TEXTAREA','BUTTON'].includes(event.target.tagName))return;
+ if($('science-dialog').open||['INPUT','SELECT','TEXTAREA','BUTTON','SUMMARY','A'].includes(event.target.tagName))return;
  if(event.code==='Space'){event.preventDefault();state.running?stop():start();}
 
 });

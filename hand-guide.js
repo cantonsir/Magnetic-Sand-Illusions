@@ -8,37 +8,37 @@ export function createHandGuide(container, mode) {
   const id = `hand-scene-${mode}`;
   const speckles = Array.from({ length: 44 }, (_, n) => {
     const x = (n * 17 + 3) % 48, y = (n * 29 + 7) % 48;
-    return `<rect x="${x}" y="${y}" width="${n % 3 + 1}" height="2" fill="${n % 2 ? '#dae4ef' : '#080e16'}" opacity=".38"/>`;
+    return `<rect x="${x}" y="${y}" width="${n % 3 + 1}" height="2" fill="${n % 2 ? '#e5e5e7' : '#111113'}" opacity=".38"/>`;
   }).join('');
   const defs = `<defs>
-    <linearGradient id="${id}-frame" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a4b5c8"/><stop offset=".43" stop-color="#566b82"/><stop offset="1" stop-color="#34485e"/></linearGradient>
-    <linearGradient id="${id}-glass" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#26374a"/><stop offset="1" stop-color="#142334"/></linearGradient>
-    <linearGradient id="${id}-stand" x1="0" x2="1"><stop stop-color="#263a4d"/><stop offset=".45" stop-color="#899aac"/><stop offset="1" stop-color="#32485d"/></linearGradient>
+    <linearGradient id="${id}-frame" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e0e0e3"/><stop offset=".43" stop-color="#a3a3aa"/><stop offset="1" stop-color="#73737b"/></linearGradient>
+    <linearGradient id="${id}-glass" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#343438"/><stop offset="1" stop-color="#1d1d20"/></linearGradient>
+    <linearGradient id="${id}-stand" x1="0" x2="1"><stop stop-color="#96969d"/><stop offset=".45" stop-color="#e4e4e7"/><stop offset="1" stop-color="#a8a8ae"/></linearGradient>
     <pattern id="${id}-grain" width="48" height="48" patternUnits="userSpaceOnUse">${speckles}</pattern>
-    <filter id="${id}-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".3"/></filter>
+    <filter id="${id}-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".14"/></filter>
     <marker id="${id}-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path class="scene-arrowhead" d="M1 1L6 4L1 7" fill="none" stroke-width="1.5" stroke-linejoin="round"/></marker>
   </defs>`;
   const text = (x, y, value, extra = '') => `<text x="${x}" y="${y}" class="scene-label" ${extra}>${value}</text>`;
   const photo = (file, pose = '', size = 190, fingertip = false) => `<image ${pose ? `data-pose="${pose}"` : ''} href="${file}" x="${-size * (fingertip ? 215 / 512 : .5)}" y="${fingertip ? -size * 17 / 512 : 0}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet" filter="url(#${id}-shadow)"/>`;
   const frontScreen = `<g class="scene-device">
     <path d="M166 224H194L198 249H162Z" fill="url(#${id}-stand)"/>
-    <path d="M130 250Q180 243 230 250L232 255H128Z" fill="#53697f"/>
+    <path d="M130 250Q180 243 230 250L232 255H128Z" fill="#b8b8bf"/>
     <rect x="24" y="23" width="312" height="207" rx="12" fill="url(#${id}-frame)"/>
-    <rect x="27" y="26" width="306" height="201" rx="9" fill="#0c1724"/>
+    <rect x="27" y="26" width="306" height="201" rx="9" fill="#151517"/>
     <rect x="33" y="32" width="294" height="188" rx="5" fill="url(#${id}-glass)"/>
     <rect x="33" y="32" width="294" height="188" rx="5" fill="url(#${id}-grain)" opacity=".33"/>
-    <path d="M42 37H308" stroke="#8498ae" opacity=".15"/>
+    <path d="M42 37H308" stroke="#dedee3" opacity=".15"/>
   </g>`;
   const sideScreen = (left = 214, rear = false) => {
     const right = left + 69;
     return `<g class="scene-device ${rear ? 'scene-occluding-device' : ''}">
       <path d="M${left + 26} 216L${left + 29} 250L${left + 46} 255L${left + 44} 220Z" fill="url(#${id}-stand)"/>
-      <path d="M${left + 8} 255L${left + 58} 269L${left + 79} 260L${left + 32} 248Z" fill="#4c6277"/>
-      <path d="M${left - 5} 34L${right} 58L${right} 233L${left - 5} 209Z" fill="#2b3d51" stroke="#8e9eb1" stroke-width="1.3" stroke-linejoin="round"/>
-      <path d="M${left} 37L${right - 4} 58L${right - 4} 226L${left} 205Z" fill="#101c2b" stroke="#536b84" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M${left + 8} 255L${left + 58} 269L${left + 79} 260L${left + 32} 248Z" fill="#b5b5bd"/>
+      <path d="M${left - 5} 34L${right} 58L${right} 233L${left - 5} 209Z" fill="#a3a3ab" stroke="#cfcfd4" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M${left} 37L${right - 4} 58L${right - 4} 226L${left} 205Z" fill="#202024" stroke="#74747c" stroke-width="1.3" stroke-linejoin="round"/>
       <path d="M${left + 5} 46L${right - 9} 63L${right - 9} 215L${left + 5} 198Z" fill="url(#${id}-glass)"/>
       <path d="M${left + 5} 46L${right - 9} 63L${right - 9} 215L${left + 5} 198Z" fill="url(#${id}-grain)" opacity=".32"/>
-      <path d="M${left - 5} 34V209" stroke="#bcc8d5" opacity=".6"/>
+      <path d="M${left - 5} 34V209" stroke="#eeeeef" opacity=".6"/>
     </g>`;
   };
   const arrow = (path, extra = '') => `<path d="${path}" class="scene-arrow" fill="none" marker-end="url(#${id}-arrow)" ${extra}/>`;

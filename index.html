@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b111c">
+<meta name="theme-color" content="#f5f5f7">
 <meta name="description" content="Explore four Magnetic Sand Illusions with your own hands. Separate animated movement guides, clear English and Chinese instructions, and independent visual noise.">
 <title>Magnetic Sand · Explore with your hands</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b111c'/%3E%3Cpath d='M7 9h3v3H7zm9-3h3v3h-3zm6 8h3v3h-3zM6 20h3v3H6zm8 4h3v3h-3z' fill='%23edc77a'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=hands5">
-<link rel="stylesheet" href="refinements.css?v=hands5">
-<link rel="stylesheet" href="hand-guide.css?v=hands5">
-<script src="app.js?v=hands5" type="module"></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f5f5f7'/%3E%3Cpath d='M7 9h3v3H7zm9-3h3v3h-3zm6 8h3v3h-3zM6 20h3v3H6zm8 4h3v3h-3z' fill='%231d1d1f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=elegant1">
+<link rel="stylesheet" href="refinements.css?v=elegant1">
+<link rel="stylesheet" href="hand-guide.css?v=elegant1">
+<script src="app.js?v=elegant1" type="module"></script>
 </head>
 <body>
 <a class="skip-link" href="#experiment">Skip to experiment</a>
 <header class="site-header">
-<a href="#" class="brand" aria-label="Magnetic Sand home"><span class="brand-mark" aria-hidden="true">∴</span><span>MAGNETIC <b>SAND</b><small data-i18n="brandSub">A PLAYGROUND FOR PERCEPTION</small></span></a>
-<nav aria-label="Main navigation"><button class="text-button" id="science-open" data-i18n="science">The science</button><button class="language-button" id="language" aria-label="Switch to Chinese">EN <span>/ 中文</span></button></nav>
+<a href="#" class="brand" aria-label="Magnetic Sand home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28"><circle cx="7" cy="7" r="2.4"/><circle cx="19" cy="5" r="1.8"/><circle cx="14" cy="14" r="3"/><circle cx="5" cy="21" r="1.8"/><circle cx="23" cy="21" r="2.4"/></svg></span><span>Magnetic <b>Sand</b><small data-i18n="brandSub">A PLAYGROUND FOR PERCEPTION</small></span></a>
+<nav aria-label="Main navigation"><a class="nav-link" href="#experience" data-i18n="explore">Explore</a><button class="text-button" id="science-open" data-i18n="science">The science</button><button class="language-button" id="language" aria-label="Switch to Chinese">EN <span>/ 中文</span></button></nav>
 </header>
 <main>
-<section class="intro"><div><p class="eyebrow" data-i18n="eyebrow">FOUR EXPERIMENTS. ONE VERY CURIOUS BRAIN.</p><h1 data-i18n="headline">A field of noise.<br><span>Your hands, your perception.</span></h1></div><p class="intro-copy" data-i18n="intro">Move your own hand near the screen. Observe what changes in your experience.</p></section>
-<section class="experience" aria-label="Illusion playground">
+<section class="intro"><div><p class="eyebrow" data-i18n="eyebrow">An exploration in perception</p><h1 data-i18n="headline">Your hand moves.<br><span>Does the sand?</span></h1></div><p class="intro-copy" data-i18n="intro">A field of random noise. Your own hand.<br>Four simple movements to explore what you see.</p><div class="hero-actions"><a class="primary-button" href="#experience" data-i18n="heroExplore">Explore the illusions</a><a class="text-button" href="#research" data-i18n="heroScience">Discover the science →</a></div></section>
+<section class="experience" id="experience" aria-label="Illusion playground">
+<div class="section-heading"><div><p class="eyebrow" data-i18n="experienceLabel">THE EXPERIENCE</p><h2 data-i18n="experienceTitle">Four ways to explore.</h2></div><p class="section-description" data-i18n="experienceIntro">Choose a movement. Watch the guide.<br>Then try it with your own hand.</p></div>
 <div class="mode-tabs" role="tablist" aria-label="Four illusion types">
 <button class="mode-tab selected" role="tab" aria-selected="true" aria-controls="experiment" id="tab-0"><span class="mode-number">01</span><span><b>Leave a trace</b><small>Iconic trace</small></span><span class="tab-check" aria-hidden="true"></span></button>
 <button class="mode-tab" role="tab" aria-selected="false" aria-controls="experiment" id="tab-1"><span class="mode-number">02</span><span><b>Open & close</b><small>Attraction / repulsion</small></span><span class="tab-check" aria-hidden="true"></span></button>
@@ -36,23 +37,23 @@
 <div class="transport"><button class="play-button" id="play" aria-label="Play"><span id="play-icon" aria-hidden="true">▶</span> <span id="play-label" data-i18n="play">Play</span></button><div class="segmented" aria-label="Noise mode"><button class="active" id="dynamic" aria-pressed="true" data-i18n="dynamic">Dynamic</button><button id="static" aria-pressed="false" data-i18n="static">Still</button></div><span class="hand-label" data-i18n="handOnly">Use your own hand</span><button class="text-button reset-button" id="reset" data-i18n="reset">Reset</button></div>
 <div class="signal-strip"><span class="signal-icon" aria-hidden="true">⌁</span><p data-i18n="signal">The noise stays independent of your hand.</p><button class="text-button" id="reveal" aria-expanded="false" data-i18n="reveal">What is happening?</button></div>
 <div class="reveal-panel" id="reveal-panel" hidden></div>
-<div class="observation" id="observation"><div class="observation-heading"><h3 data-i18n="notice">What did you notice?</h3><p data-i18n="noRight">There is no right answer.</p></div><div class="observation-options" id="observation-options"></div><div class="observation-footer"><p class="observation-feedback" id="observation-feedback" aria-live="polite"></p><button class="primary-button next-button" id="next" disabled data-i18n="next">Next experiment</button></div></div>
 </div>
 <aside class="guide-panel" aria-labelledby="guide-title">
 <div class="guide-top"><p class="eyebrow" data-i18n="yourMission">YOUR EXPERIMENT</p><span id="guide-index">01 / 04</span></div><h2 id="guide-title">Leave a trace</h2><p class="guide-subtitle" id="guide-subtitle"></p>
 <div class="movement-card" id="hand-guide-card"><div class="movement-card-heading"><span data-i18n="tutorialLabel">MOVEMENT GUIDE</span><span id="tutorial-view"></span><button class="guide-expand" id="guide-expand" aria-label="Enlarge movement guide" title="Enlarge movement guide">⤢</button></div><div id="hand-guide" class="hand-guide"></div><div class="guide-steps" id="guide-steps" role="group" aria-label="Movement steps"><button id="tutorial-phase-0" class="guide-step" aria-pressed="true">01</button><button id="tutorial-phase-1" class="guide-step" aria-pressed="false">02</button><button id="tutorial-phase-2" class="guide-step" aria-pressed="false">03</button></div><div class="phase-row"><span id="tutorial-step">01 / 03</span><p id="tutorial-caption"></p></div><div class="tutorial-controls"><button class="guide-play" id="tutorial-toggle" aria-pressed="false" data-i18n="tutorialPlay">Watch the movement</button><span data-i18n="tutorialDuration">8-second guide</span></div><div class="tutorial-track"><span id="tutorial-progress"></span></div></div>
 <p class="tutorial-note" id="tutorial-note" data-i18n="tutorialNote">This drawing explains the movement. For the experiment, use your own hand.</p>
-<ol class="instruction-list" id="instructions"></ol>
+<details class="instruction-details"><summary data-i18n="detailedInstructions">Step-by-step instructions</summary><ol class="instruction-list" id="instructions"></ol></details>
 <button class="primary-button guide-try" id="guide-try" data-i18n="tryMovement">Try with your own hand →</button>
 <div class="attention-card"><span class="attention-icon" aria-hidden="true">◎</span><div><b data-i18n="attention">Where to look</b><p id="attention-text"></p></div></div>
 <p class="adaptation-note" id="hand-note" data-i18n="handNote">Keep your hand close without touching. Keep the device steady.</p>
 <p class="condition-note" id="condition-note" hidden></p>
 </aside>
+<div class="observation" id="observation"><div class="observation-heading"><h3 data-i18n="notice">What did you notice?</h3><p data-i18n="noRight">There is no right answer.</p></div><div class="observation-options" id="observation-options"></div><div class="observation-footer"><p class="observation-feedback" id="observation-feedback" aria-live="polite"></p><button class="primary-button next-button" id="next" disabled data-i18n="next">Next experiment</button></div></div>
 </div>
 <div class="tuning-panel"><div class="tuning-heading"><div><p class="eyebrow" data-i18n="tuneSub">TRY A DIFFERENT CONDITION</p><h2 data-i18n="tune">Adjust the noise</h2></div><button class="text-button" id="preset" data-i18n="preset">Restore recommended</button></div><div class="sliders"><label><span data-i18n="grain">Grain size</span><output id="grain-output">2 px</output><input id="grain" type="range" min="1" max="5" value="2" step="1" aria-label="Grain size"><span class="range-ends"><span data-i18n="fine">Fine</span><span data-i18n="coarse">Coarse</span></span></label><label><span data-i18n="rate">Refresh rate</span><output id="rate-output">60 Hz</output><input id="rate" type="range" min="5" max="60" value="60" step="5" aria-label="Target refresh rate"><span class="range-ends"><span data-i18n="slow">Slow</span><span data-i18n="fast">Fast</span></span></label><label><span data-i18n="contrast">Contrast</span><output id="contrast-output">80%</output><input id="contrast" type="range" min="20" max="100" value="80" step="5" aria-label="Contrast"><span class="range-ends"><span data-i18n="soft">Soft</span><span data-i18n="strong">Strong</span></span></label></div><p class="tuning-footnote" id="rate-note"></p></div>
 </section>
 <section class="passport"><div><p class="eyebrow" data-i18n="passport">YOUR EXPLORER PASSPORT</p><h2 id="passport-title"></h2><p id="passport-description"></p></div><div class="stamps" id="stamps"></div><span class="passport-count" id="passport-count">0 / 4</span><button class="text-button" id="restart" data-i18n="restart">Start over</button></section>
-<section class="science-teaser"><div><p class="eyebrow" data-i18n="behind">BEHIND THE ILLUSION</p><h2 data-i18n="scienceTitle">Random pixels, a surprising experience.</h2><p data-i18n="scienceTeaser">Inspired by research on how vision and our own actions interact.</p></div><button class="secondary-button" id="science-more" data-i18n="readScience">Explore the science</button></section>
+<section class="science-teaser" id="research"><div><p class="eyebrow" data-i18n="behind">BEHIND THE ILLUSION</p><h2 data-i18n="scienceTitle">Random pixels, a surprising experience.</h2><p data-i18n="scienceTeaser">Inspired by research on how vision and our own actions interact.</p></div><button class="secondary-button" id="science-more" data-i18n="readScience">Explore the science</button></section>
 </main>
 <footer><span>MAGNETIC SAND <span class="footer-divider">/</span> <span data-i18n="footerLab">An open perception playground</span></span><div><a href="https://doi.org/10.1167/jov.26.5.3" target="_blank" rel="noopener noreferrer" data-i18n="paper">Research paper</a><a href="https://github.com/cantonsir/Magnetic-Sand-Illusions" target="_blank" rel="noopener noreferrer" data-i18n="source">Research & code</a><span data-i18n="noTracking">No sign-in. No tracking.</span></div></footer>
 <dialog id="science-dialog" aria-labelledby="science-dialog-title"><button class="dialog-close icon-button" id="science-close" aria-label="Close science explanation">×</button><p class="eyebrow" data-i18n="behind">BEHIND THE ILLUSION</p><h2 id="science-dialog-title" data-i18n="scienceTitle">Random pixels, a surprising experience.</h2><div id="science-content"></div></dialog>
