@@ -72,7 +72,7 @@ export function createHandGuide(container, mode) {
       ${sideScreen(154, true)}
       ${text(184, 23, words.screen, 'text-anchor="middle"')}
       <g class="scene-hidden-motion">
-        ${arrow('M329 135V84', 'data-up')}${arrow('M329 151V202', 'data-down')}
+        ${arrow('M112 100V59', 'data-up')}${arrow('M112 161V202', 'data-down')}
       </g>
       ${text(280, 18, words.behind, 'text-anchor="middle"')}
       ${text(280, 33, words.palm, 'text-anchor="middle"')}`;
@@ -110,8 +110,10 @@ export function createHandGuide(container, mode) {
       hand.setAttribute('transform', `translate(${x},47)`);
       emphasize(cue('left'), cue('right'), phase);
     } else {
-      const y = p < .51 ? 63 - 24 * ease((p - .18) / .33) : 39 + 48 * ease((p - .51) / .39);
-      hand.setAttribute('transform', `matrix(.68 .16 0 1 247 ${y})`);
+      const y = p < .51 ? 143 - 24 * ease((p - .18) / .33) : 119 + 48 * ease((p - .51) / .39);
+      // Horizontal hand: fingertips point into the area behind the screen;
+      // the wrist and forearm extend sideways, with the palm toward the viewer.
+      hand.setAttribute('transform', `matrix(0 -.68 1 0 155 ${y})`);
       emphasize(cue('up'), cue('down'), phase);
     }
     return phase;
