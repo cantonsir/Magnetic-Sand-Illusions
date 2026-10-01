@@ -1,6 +1,6 @@
 import { noiseFrame } from './noise.js';
-import { content } from './content.js?v=noise1';
-import { createHandGuide } from './hand-guide.js?v=noise1';
+import { content } from './content.js?v=perspective1';
+import { createHandGuide } from './hand-guide.js?v=perspective1';
 const $ = id => document.getElementById(id);
 const grains = [1,2,4,8,16], colors = ['#0071e3','#0071e3','#0071e3','#0071e3'];
 const storageKey = 'magnetic-sand-real-hands-v2';
@@ -72,6 +72,7 @@ function renderHandInstructions(){
  $('noise-viewport').setAttribute('aria-description',help);
  $('noise-viewport').setAttribute('aria-label',t('canvasLabel'));
  $('stage').dataset.help=help;
+ $('stage').dataset.touchHelp=t('handHelpTouch');
  resize();
 }
 function renderTutorial(){

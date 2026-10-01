@@ -13,3 +13,11 @@ html[lang=zh-CN] #science-content p{line-height:1.9}
 @media(max-width:900px){html[lang=zh-CN] .intro-copy{font-size:18px}}
 @media(max-width:600px){html[lang=zh-CN] h1{font-size:43px;line-height:1.23;letter-spacing:-1px}html[lang=zh-CN] .intro-copy{font-size:16px;line-height:1.85}html[lang=zh-CN] .mode-tab b{font-size:14px}html[lang=zh-CN] .mode-tab small{font-size:10px}html[lang=zh-CN] .instruction-list li{font-size:15px}html[lang=zh-CN] .stage-gate h2{font-size:25px}html[lang=zh-CN] .phase-row p{font-size:14px}html[lang=zh-CN] .science-teaser h2{font-size:29px;line-height:1.3}}
 @media(max-width:360px){html[lang=zh-CN] h1{font-size:38px}html[lang=zh-CN] .mode-tab b{font-size:13px}}
+
+@media(max-width:600px){
+  html[lang=zh-CN] h1{font-size:clamp(35px,10.1vw,46px);line-height:1.23}
+  html[lang=zh-CN] .section-heading h2{font-size:clamp(24px,6.9vw,28px);line-height:1.3}
+  html[lang=zh-CN] .mode-tab{align-items:flex-start}
+  html[lang=zh-CN] .stage-gate p,html[lang=zh-CN] .signal-strip p{line-height:1.75}
+}
+@media(max-width:360px){html[lang=zh-CN] h1{font-size:clamp(33px,10.1vw,38px)}}

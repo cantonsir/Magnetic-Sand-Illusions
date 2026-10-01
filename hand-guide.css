@@ -51,3 +51,37 @@ html[lang=zh-CN] .hand-scene .scene-label{font-size:12px;letter-spacing:0}
 @media(max-width:800px){.hand-guide{height:256px}}
 @media(max-width:600px){.hand-guide{height:274px;min-height:235px}.guide-step{font-size:12px;min-height:40px}.movement-card-heading{padding-top:18px}.guide-play{min-height:40px;font-size:13px}.phase-row p{font-size:14px}.movement-card:fullscreen{padding:20px}.movement-card:fullscreen .phase-row p{font-size:16px}.movement-card:fullscreen>.hand-guide{height:min(53vh,480px);min-height:200px}.movement-card:fullscreen .guide-step{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.guide-expand,.guide-step,.guide-play{transition:none}}
+
+/* The whole scene scales as one drawing; captions wrap outside its geometry. */
+.hand-guide{height:auto;min-height:0;flex-direction:column;padding:4px 8px 8px}
+.hand-guide .hand-scene{width:100%;height:auto;max-width:480px;max-height:none;aspect-ratio:360/306;flex-shrink:0}
+.hand-scene .scene-label{font-size:13px}
+.scene-cutaway-controls{width:100%;padding:0 8px 7px;text-align:center}
+.scene-view-caption{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 7px}
+.scene-cutaway-toggle{min-height:44px;max-width:100%;padding:9px 14px;border:1px solid #d2d2d7;border-radius:22px;background:#fff;color:var(--accent);font-size:12px;line-height:1.4}
+.scene-cutaway-toggle:hover{background:#f5f5f7}
+.movement-card:fullscreen{height:100vh;height:100dvh;justify-content:flex-start;padding:max(20px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}
+.movement-card:fullscreen>.hand-guide{height:auto;min-height:0;max-height:none;flex:1;margin:8px auto 12px;padding:0}
+.movement-card:fullscreen .hand-scene{flex:1;min-height:140px;max-height:55vh;max-height:55dvh;width:100%;height:100%;max-width:none}
+.movement-card:fullscreen .scene-cutaway-controls{flex-shrink:0;padding:6px 0}
+.movement-card:fullscreen .guide-expand{width:44px;height:44px}
+@media(max-width:600px){
+  .guide-expand{width:44px;height:44px}
+  .movement-card-heading{grid-template-columns:minmax(0,1fr) 44px;padding:12px 12px 0;gap:3px 8px}
+  .guide-steps{margin-inline:12px}
+  .guide-step,.guide-play{min-height:44px}
+  .phase-row{padding:16px 14px 12px;min-height:64px}
+  .tutorial-controls{padding:0 12px 14px;gap:8px}
+  .tutorial-controls>span{font-size:11px}
+  .hand-guide{padding-inline:4px}
+}
+@media(max-height:500px) and (orientation:landscape){
+  .movement-card:fullscreen{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.8fr);grid-template-rows:auto auto auto auto 2px;gap:8px 20px;align-content:center}
+  .movement-card:fullscreen>.movement-card-heading{grid-column:1/-1;padding:0}
+  .movement-card:fullscreen>.hand-guide{grid-column:1;grid-row:2/6;height:72vh;height:72dvh;width:100%;margin:0}
+  .movement-card:fullscreen .hand-scene{min-height:80px;max-height:none}
+  .movement-card:fullscreen>.guide-steps{grid-column:2;grid-row:2;align-self:center}
+  .movement-card:fullscreen>.phase-row{grid-column:2;grid-row:3;padding:8px 0;min-height:0;align-self:center}
+  .movement-card:fullscreen>.tutorial-controls{grid-column:2;grid-row:4;padding:0;align-self:center}
+  .movement-card:fullscreen>.tutorial-track{grid-column:2;grid-row:5}
+}

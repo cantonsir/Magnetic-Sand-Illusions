@@ -6,7 +6,7 @@
   color:var(--text);background:var(--bg);font-synthesis:none;color-scheme:light;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:0}body{margin:0;background:var(--bg)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:0;-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;background:var(--bg);min-width:0}
 button,input,a{-webkit-tap-highlight-color:transparent}button,input{font:inherit}button{cursor:pointer;color:inherit;border:0}button:disabled{cursor:default;opacity:.42}a{color:inherit;text-decoration:none}button,a{touch-action:manipulation}
 button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #0071e3;outline-offset:4px}[hidden]{display:none!important}
 button,a{transition:background-color .18s ease,color .18s ease,box-shadow .18s ease,border-color .18s ease}
@@ -57,3 +57,86 @@ dialog{background:#fff;color:var(--text);border:0;border-radius:26px;max-width:7
 @media(max-width:360px){.site-header #science-open{display:none}.language-button{white-space:nowrap}}
 
 .observation-options button.chosen:disabled{opacity:.8}
+
+/* Room for the movement guide, readable type, and dependable touch targets. */
+@media(min-width:601px) and (max-width:760px){
+  .guide-panel{display:block;padding:24px}
+  .movement-card:not(:fullscreen){max-width:480px;margin-inline:auto}
+  .tutorial-note{max-width:480px;margin-inline:auto}
+  .instruction-details{margin-top:22px}
+  .observation-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .site-header,main,footer{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  .site-header nav{flex-shrink:0}
+  .site-header .text-button{min-height:44px}
+  .language-button{font-size:12px;padding:8px 12px;min-height:44px;white-space:nowrap}
+  h1{font-size:clamp(37px,10.9vw,52px);line-height:1.08;letter-spacing:-1.8px}
+  .hero-actions{gap:12px 20px;flex-wrap:wrap}
+  .hero-actions .text-button{display:inline-flex;align-items:center;min-height:44px}
+  .mode-tab>span:nth-child(2){min-width:0}
+  .mode-tab b,.mode-tab small{overflow-wrap:break-word}
+  .mode-tab small{font-size:10px}
+  .stage-toolbar .icon-button{min-width:44px;min-height:44px}
+  .quick-stop{font-size:12px;padding:9px 13px;min-height:44px}
+  .stage{height:clamp(300px,94vw,420px)}
+  .transport{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
+  .play-button{width:100%;min-width:0;min-height:48px;font-size:13px}
+  .segmented{margin-left:0}
+  .segmented button{font-size:12px;padding:8px 12px;min-height:44px}
+  .gate-actions .primary-button,.gate-actions .secondary-button{min-height:44px}
+  .stage-gate .text-button{min-height:44px;display:inline-flex;align-items:center}
+  .stage-gate .comfort-note{font-size:12px;line-height:1.6}
+  .stage:after{font-size:11px}
+  .signal-strip p{font-size:12px;min-width:0}
+  .signal-strip .text-button{font-size:12px;min-height:44px;flex-shrink:0}
+  .guide-panel{padding:22px 16px}
+  .observation{padding:22px 18px}
+  .observation-options button{font-size:13px;min-height:48px}
+  .tuning-heading>div{min-width:0}
+  .tuning-heading .text-button{font-size:12px;max-width:95px;min-height:44px;flex-shrink:0}
+  .sliders label{gap:8px}
+  .sliders output{font-size:13px}
+  input[type=range]{height:44px}
+  .range-ends{font-size:12px}
+  .passport{padding:24px 20px}
+  .stamp{width:44px;height:44px}
+  .passport-count{margin-left:0}
+  .passport .text-button{font-size:13px;min-height:44px}
+  footer>div{gap:4px 18px;align-items:center}
+  footer a{display:inline-flex;align-items:center;min-height:44px;font-size:12px}
+  dialog{padding:38px 22px 26px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain}
+  .dialog-close{min-width:44px;min-height:44px;right:10px;top:10px}
+  .toast{bottom:max(16px,env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 32px);font-size:13px;padding:14px 18px}
+}
+@media(max-width:420px){.site-header #science-open{display:none}}
+@media(max-width:360px){
+  .site-header,main,footer{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+  h1{font-size:clamp(35px,10.9vw,40px);letter-spacing:-1.5px}
+  .guide-panel{padding:20px 12px}
+  .transport{padding:12px 10px;gap:8px}
+  .segmented button{padding:8px 10px}
+  .stage-toolbar{padding:8px 10px}
+  .stage-toolbar>span:first-child{font-size:9px;gap:6px}
+  .signal-strip{align-items:flex-start;flex-direction:column;gap:5px}
+  .signal-strip .text-button{margin-left:0;max-width:none;text-align:left}
+  .passport{gap:14px}
+}
+@media(hover:none) and (pointer:coarse){
+  .icon-button,.quick-stop,.language-button,.stamp{min-width:44px;min-height:44px}
+  .segmented button{min-height:44px}
+  input[type=range]{height:44px}
+}
+.experiment-panel:fullscreen{width:100%;height:100vh;height:100dvh;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);overflow:auto}
+.experiment-panel:fullscreen .stage{min-height:0}
+.experiment-panel:fullscreen .stage-toolbar,.experiment-panel:fullscreen .transport{flex-shrink:0}
+@media(max-width:600px),(hover:none) and (pointer:coarse){.stage:after{content:attr(data-touch-help)}}
+@media(max-height:600px) and (orientation:landscape){
+  .experiment-panel:fullscreen .stage-toolbar{min-height:44px;padding:0 12px}
+  .experiment-panel:fullscreen .transport{padding:6px 12px;gap:8px}
+  .experiment-panel:fullscreen .stage{padding:8px 12px 25px}
+  .experiment-panel:fullscreen .stage:after{bottom:6px}
+  .experiment-panel:fullscreen .stage.is-ready{min-height:0}
+  .experiment-panel:fullscreen .stage-gate{position:absolute;min-height:0;padding:20px;justify-content:flex-start;gap:12px}
+  .experiment-panel:fullscreen .gate-symbol{display:none}
+}
