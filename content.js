@@ -1,37 +1,143 @@
 export const content = {
 en: {
-brandSub:'A PLAYGROUND FOR PERCEPTION',science:'The science',eyebrow:'FOUR EXPERIMENTS. ONE VERY CURIOUS BRAIN.',headline:'Nothing moves.<br><span>Until you do.</span>',intro:'Random pixels. A moving hand. An unexpected illusion.<br>Try it for yourself — then peek behind the trick.',stageCaption:'REAL NOISE · ZERO PHYSICS',readyTitle:'A little noise. A little wonder.',readyBody:'Start the noise, then follow your experiment. Try a real hand for the original demonstration.',start:'Enter the experiment',comfort:'Flickering visual noise. If you’re sensitive to flicker, keep the image still. Stop whenever uncomfortable.',tryStill:'Try a still image instead',play:'Play',pause:'Pause',dynamic:'Dynamic',static:'Still',control:'Control',reset:'Reset',signal:'The noise is random. Your movement changes only the gray dot.',signalHand:'The noise is random. Your hand never changes the pixels.',reveal:'Reveal the trick',hideReveal:'Close the reveal',yourMission:'YOUR EXPERIMENT',attention:'Where to look',notice:'What do you notice?',noRight:'No right answer. Everyone’s perception is different.',next:'Next experiment',finish:'Complete the journey',tune:'Make it your experiment',tuneSub:'Small changes can change what you see.',preset:'Restore recommended',grain:'Grain size',rate:'Refresh rate',contrast:'Contrast',fine:'Fine',coarse:'Coarse',slow:'Slow',fast:'Fast',soft:'Soft',strong:'Strong',passport:'YOUR EXPLORER PASSPORT',restart:'Start over',scienceTitle:'The pixels are random. The experience isn’t.',scienceTeaser:'Magnetic Sand Illusions explore how our visual system combines noisy images with our own actions. This playground is inspired by Shimojo and colleagues’ research.',readScience:'Explore the science',footerLab:'An open perception playground',paper:'Research paper',source:'Original research & code',noTracking:'No sign-in. No tracking.',behind:'BEHIND THE ILLUSION',ghostPad:'Move here',ghostNote:'Watch the noise',ready:'READY WHEN YOU ARE',paused:'PAUSED · SPACE TO RESUME',still:'STILL NOISE',running:'LIVE NOISE',pointer:'Mouse / touch · adaptation',auto:'Watch a dot demo',hand:'Real hand · original',adaptation:'Mouse / touch is an exploratory adaptation. Try “Real hand” for the original demonstration.',autoNote:'This dot illustrates an occlusion cue. Watching it differs from making the movement yourself.',handNote:'Keep your hand close without touching. Steady the device; try a larger screen if possible.',observationLabels:['A clear change','A faint change','No change','Not sure'],feedback:'Observation saved. Curiosity counts — you don’t need to see an illusion.',tryFirst:'Start the experiment before recording an observation.',saved:'Recorded',passportTitle:'Four ways to question your eyes.',passportDescription:'Try each experiment and record what you notice. Progress stays on this device.',completeTitle:'You’ve explored all four.',completeDescription:'Your observations count, whether the sand seemed to move or stayed perfectly still. Revisit any experiment to compare.',completeToast:'Explorer passport complete. Keep experimenting!',timedPause:'45 seconds explored. Take a break and record what you noticed.',hiddenPause:'Paused while you were away. Press Play when you’re ready.',resetToast:'Settings restored. Noise paused.',restartToast:'Passport cleared. A fresh journey awaits.',rateNote:'Grain size is in CSS pixels. Refresh rate is a target; your screen may limit it.',measured:'delivered',pauseHelp:'Space: play / pause · Esc: stop · Arrow keys: move the dot',hiddenHelp:'Move in the side pad. Arrow keys also work. Keep looking at the noise.',handHelp:'Use your real hand near the screen. Space: play / pause · Esc: stop',stillCaveat:'The original study found the trace could persist in still noise; the other three depended on dynamic noise.',title:'Magnetic Sand · A playground for perception',languageLabel:'Switch to Chinese',fullscreen:'Enter fullscreen',exitFullscreen:'Exit fullscreen',closeScience:'Close science explanation',canvasLabel:'Independent random noise. The hand and pointer do not control it.',modeGroup:'Four illusion types',noiseGroup:'Noise mode',ghostLabel:'Side movement pad for the hidden-hand adaptation',rateLabel:'Target noise refresh rate',grainLabel:'Grain size in CSS pixels',contrastLabel:'Noise contrast',reduced:'Reduced motion is enabled on your device. Start with “Still” if you prefer.',revealTitle:'Nothing in the noise follows you.',revealBody:'Every refresh replaces each grain independently with one of two brightness levels. Your pointer changes only the gray occluder on a separate layer. In real-hand mode, the display receives no hand input at all.',revealStatic:'Switch between Dynamic and Still, then repeat the same gesture. What changes in your experience?',noCapture:'No camera or hand tracking is used. Your reports stay in this browser.',
+brandSub:'A PLAYGROUND FOR PERCEPTION',science:'The science',eyebrow:'FOUR WAYS TO EXPLORE WITH YOUR OWN HANDS',
+headline:'Your hand moves.<br><span>Does the sand?</span>',intro:'A field of random noise. Your own hand.<br>Four simple movements to explore what you see.',
+stageCaption:'RANDOM NOISE · YOUR OWN HAND',readyTitle:'Bring your hand. Bring your curiosity.',
+readyBody:'Watch the movement guide, start the noise, then try the movement with your own hand near the screen.',
+start:'Start exploring',comfort:'This display contains flickering visual noise. If you are sensitive to flicker, start with a still image. Pause and look away if you feel uncomfortable.',
+tryStill:'Start with a still image',play:'Play noise',pause:'Pause noise',dynamic:'Dynamic',static:'Still',control:'How to explore',reset:'Reset',
+signal:'The noise is random. Your hand does not change the image.',signalHand:'The noise is random. Your hand does not change the image.',
+reveal:'What is happening?',hideReveal:'Close explanation',yourMission:'TRY THIS MOVEMENT',attention:'Where to look',
+notice:'What did you notice?',noRight:'There is no right answer. A change, no change, or uncertainty are all worth recording.',
+next:'Next experience',finish:'Complete your exploration',tune:'Adjust the viewing conditions',tuneSub:'Try one change at a time, then repeat the same movement.',
+preset:'Restore starting settings',grain:'Grain size',rate:'Refresh rate',contrast:'Contrast',fine:'Fine',coarse:'Coarse',slow:'Slow',fast:'Fast',soft:'Low',strong:'High',
+passport:'YOUR EXPLORATION PASSPORT',restart:'Start a new exploration',
+scienceTitle:'The image is random.<br>Your experience can be surprising.',
+scienceTeaser:'Magnetic Sand Illusions explore how our actions and attention can shape what we see in visual noise. This playground is inspired by Shimojo and colleagues’ research.',
+readScience:'Read about the research',footerLab:'An open playground for perception',paper:'Research paper',source:'Research & source code',noTracking:'No sign-in. No tracking.',
+behind:'BEHIND THE EXPERIENCE',ready:'READY WHEN YOU ARE',paused:'PAUSED · SPACE TO RESUME',still:'STILL NOISE',running:'LIVE NOISE',
+hand:'Your own hand',handOnly:'Explore with your own hand',
+handNote:'Keep your hand close without touching the screen. Keep the device steady; a larger screen can make the visible-hand movements easier.',
+tryMovement:'Try with your own hand →',tutorial:'See the hand movement',tutorialLabel:'MOVEMENT GUIDE',tutorialPlay:'Play the guide',tutorialPause:'Pause the guide',tutorialReplay:'Replay the guide',tutorialStep:'Step',
+tutorialNote:'This animation shows the movement only. To explore the illusion, use your own hand with the noise display.',
+tutorialDuration:'8-second movement guide',diagramFront:'Front of screen',diagramBack:'Back of screen (instruction view)',
+observationLabels:['I noticed a change','Maybe a small change','I noticed no change','I’m not sure'],
+feedback:'Observation recorded. You do not need to see an illusion to complete the exploration.',tryFirst:'Start the experience before recording your observation.',saved:'Recorded',
+passportTitle:'Four movements. Your own observations.',passportDescription:'Try each movement and record what you notice. Your progress stays in this browser.',
+completeTitle:'You have explored all four.',completeDescription:'Revisit any experience, compare still and dynamic noise, or try a different viewing condition.',
+completeToast:'All four experiences recorded. You can keep exploring.',
+timedPause:'The noise has paused after 45 seconds. Take a break, then record what you noticed.',
+hiddenPause:'The noise paused while you were away. Press Play noise when you are ready.',
+resetToast:'Starting settings restored. The noise is paused.',restartToast:'Your passport is cleared. You can start a new exploration.',
+rateNote:'Grain size is measured in CSS pixels. Refresh rate is a target; the actual rate depends on your screen and device.',measured:'actual',
+pauseHelp:'Space: play / pause noise · Esc: stop',handHelp:'Use your own hand · Space: play / pause noise · Esc: stop',
+stillCaveat:'In the paper’s eight-participant comparison, the trace could occur with still noise; the other three illusions were not reported in that condition.',
+title:'Magnetic Sand · Explore with your hands',languageLabel:'切换为中文',fullscreen:'Enter fullscreen',exitFullscreen:'Exit fullscreen',closeScience:'Close the research explanation',
+canvasLabel:'Independent random visual noise. Your hand does not control the image.',modeGroup:'Four hand experiences',noiseGroup:'Noise display mode',
+rateLabel:'Target noise refresh rate',grainLabel:'Grain size in CSS pixels',contrastLabel:'Noise contrast',
+reduced:'Your device has reduced motion enabled. You can start with Still noise.',
+revealTitle:'The display does not respond to your hand.',
+revealBody:'At each refresh, every grain independently takes one of two brightness levels at random. No grain is programmed to follow or move away from your hand. The display receives no hand input.',
+revealStatic:'Compare Dynamic and Still while repeating the same movement. Does your experience change?',
+noCapture:'No camera or hand tracking is used. Your observations stay in this browser.',
 modes:[
-{name:'Leave a trace',scientific:'Iconic trace',subtitle:'Draw a secret letter. Watch the space it leaves.',pointer:['Start the noise. Keep your gaze near the gray dot.','Slowly move the dot in an S, a loop, or your initial.','Look just behind the dot. Repeat with Still noise.'],hand:['Start the noise. Hold one fingertip near the screen without touching.','Slowly draw an S, a loop, or your initial with your finger.','Keep attention near the fingertip, especially where it just passed.'],attention:'Look narrowly around the fingertip or dot, including its recent path.',explanation:'Some people see a brief bright or dark trail along a finger’s trajectory. No trail is drawn. The authors suggest a role for local contrast adaptation and recovery. In their study this effect could remain with still noise.'},
-{name:'Push & pull',scientific:'Attraction / repulsion',subtitle:'Your hand is the controller. The image stays independent.',hand:['Start dynamic noise. Hold your palm facing and parallel to the screen.','Slowly approach without touching, while opening and spreading your fingers.','Pull away while closing your fingers into a gentle grabbing shape. Repeat.'],attention:'Attend to the noise around your hand and between your fingers.',explanation:'Sand may seem repelled by an opening, approaching hand and attracted by a closing, withdrawing hand. This task needs real depth movement and finger opening; a mouse does not reproduce those cues.'},
-{name:'Catch the sand',scientific:'Visible action capture',subtitle:'Small movements. A wider field of attention.',pointer:['Start dynamic noise. Move the gray dot slowly left and right.','Keep movement small — a few dot widths is enough.','Broaden attention to the noise around the dot, not just its edge.'],hand:['Start dynamic noise. Hold an open hand close and parallel to the screen.','Move it slowly left and right, just a little. Avoid large sweeps.','Attend to your hand and the surrounding noise as a whole.'],attention:'Take in a broader area around the visible hand or dot.',explanation:'The random field may seem to move with a slowly moving visible hand. The paper discusses action capture, occlusion cues, and attention. This browser dot is exploratory, not a validated equivalent.'},
-{name:'The hidden hand',scientific:'Invisible action capture',subtitle:'Move outside the image. Keep your eyes inside it.',pointer:['Start dynamic noise. Move the gray dot in the side pad.','Move slowly up and down. The dot stays outside the noise.','Look at noise near the dot’s height, rather than the dot itself.'],hand:['Start dynamic noise. Place one hand behind the screen, out of sight.','Steady the device with your other hand or a stand. Move the hidden hand slowly up and down.','Watch the noise where you imagine your hidden hand to be.'],attention:'Watch the noise at the hidden hand’s inferred location, or level with the outside dot.',explanation:'Sand may seem to follow a hand moving behind the screen even though the hand is invisible. The paper also describes an outside-dot variant. For the hidden-hand task, a steady phone or tablet can be easier than a large monitor.'}
+{
+name:'Leave a trace',gate:'Bring one fingertip close without touching. Slowly draw an S or a loop; watch the area it has just uncovered.',scientific:'Iconic trace',subtitle:'Draw a slow path. Look where your fingertip just passed.',
+hand:['Start the noise. Bring one fingertip close to the screen without touching it.','Slowly draw a loop, an S, or a letter in the air in front of the image.','Look closely around your fingertip and along the path it has just taken. Try again with Still noise.'],
+phases:['Hold a fingertip near the screen','Draw a slow S-shaped path','Look beside the recent path'],
+attention:'Keep your attention close to the fingertip, especially the area it has just uncovered.',
+explanation:'A brief bright or dark trace may appear along your finger’s path. The display draws no trail. The authors suggest that local contrast adaptation and recovery may contribute. In their comparison, a trace could also occur with still noise.'
+},
+{
+name:'Open & close',gate:'Face your palm toward the screen, with your hand parallel to it. Move closer while opening your hand, then move away while gently closing it.',scientific:'Attraction / repulsion',subtitle:'Open as you approach. Close as you pull away.',
+hand:['Start dynamic noise. Hold your hand in front of the image, with your palm facing and parallel to the screen.','Slowly move closer while opening your hand and spreading your fingers. Do not touch the screen.','Slowly pull away while gently closing your fingers, as if grasping something. Repeat a few times.'],
+phases:['Palm faces the screen','Open and move closer','Close and move away'],
+attention:'Watch the noise around your hand and in the gaps between your fingers.',
+explanation:'The noise may seem to move away as your hand opens and approaches, or toward it as your hand closes and withdraws. These are apparent responses: your hand does not alter the image. This movement combines changes in depth, finger position, and visual occlusion.'
+},
+{
+name:'The visible hand',gate:'Hold an open hand close and parallel to the screen, palm facing it. Move very slowly a little left and right; look broadly around the hand.',scientific:'Visible action capture',subtitle:'Move a little. Take in the hand and the surrounding noise.',
+hand:['Start dynamic noise. Hold an open hand close to the screen, with your palm facing and parallel to it.','Move your hand very slowly from side to side over a small distance. Avoid sweeping across the whole image.','Take in your hand and the surrounding noise together, rather than staring only at a fingertip.'],
+phases:['Hold your hand parallel','Slide slowly to the left','Slide slowly to the right'],
+attention:'Let your attention cover the visible hand and a wider area of noise around it.',
+explanation:'The random field may seem to move with your slowly moving hand. The paper calls this visible action capture and discusses attention and visual occlusion as possible contributors. The pixels remain independent of the movement.'
+},
+{
+name:'The hidden hand',gate:'Hide your hand behind the screen, completely out of view. Keep the device steady and slowly move the hidden hand up and down.',scientific:'Invisible action capture',subtitle:'Hide your hand behind the screen. Watch its imagined location.',
+hand:['Start dynamic noise. Place one hand behind the screen so that you cannot see it.','Keep the device steady with a stand or your other hand. Slowly move the hidden hand up and down.','Watch the part of the noise where you imagine your hidden hand to be. A steady phone or tablet may be easier to use.'],
+phases:['Hide your hand behind the screen','Move slowly upward','Move slowly downward'],
+attention:'Look at the noise in front of the hidden hand’s imagined position.',
+explanation:'The noise may seem to follow a hand moving behind the screen, even though the hand is out of sight. The paper calls this invisible action capture. During your own exploration, keep your hand out of view and the screen steady.'
+}
 ],
-scienceHTML:'<p>The four experiences share one stimulus: independent random visual noise. No grain is programmed to follow, flee, or attract your hand.</p><h3>Four ways of attending and acting</h3><p><b>Iconic trace</b>: a fleeting apparent path. <b>Attraction / repulsion</b>: an apparent response to opening, closing, approaching, and withdrawing. <b>Visible action capture</b>: apparent motion linked to a visible hand. <b>Invisible action capture</b>: apparent motion linked to a hidden hand.</p><h3>Try the original hand demonstrations</h3><p>Select <b>Real hand</b> for the published hand tasks. Mouse, touch, and automatic dot modes are exploratory browser adaptations. The paper discusses computer variants and proposes mouse-controlled occluders for future investigation; equivalence is unvalidated.</p><h3>A comparison worth trying</h3><p>In the paper’s eight-participant dynamic-versus-static comparison, still noise could support the iconic trace, while the other three illusions were absent in that condition. This is a reason to compare conditions, not a guarantee of what you will see. Viewing distance, timing, attention, screen size, and movement matter.</p><h3>Why might this happen?</h3><p>The authors discuss contrast adaptation, visual occlusion, attention, and action capture. These are proposed contributions, not a settled explanation of every report.</p><h3>Research credit</h3><p>Shinsuke Shimojo, Shengjie Zheng, Kensuke Shimojo, Eiko Shimojo, and Daw-An Wu (2026). <i>“Magnetic sand”: Illusions of interactivity.</i> Journal of Vision, 26(5):3. <a href="https://doi.org/10.1167/jov.26.5.3" target="_blank" rel="noopener noreferrer">Paper</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13179688/" target="_blank" rel="noopener noreferrer">Open full text</a> · <a href="https://github.com/cantonsir/Magnetic-Sand-Illusions" target="_blank" rel="noopener noreferrer">Research code</a>.</p><p>This independent educational playground generates its own stimulus. The passport records exploration, not a validated perceptual measurement. No observation is sent to a server.</p>'
+scienceHTML:'<p>All four experiences use independent random visual noise. Your real hand provides the movement; the display does not detect it. No grain is programmed to follow, flee, or gather around your hand.</p><h3>Four hand movements, four experiences</h3><p><b>Iconic trace</b> is a brief apparent trail along a finger’s path. <b>Attraction / repulsion</b> is an apparent response to opening and approaching, or closing and withdrawing, a hand. <b>Visible action capture</b> is apparent motion associated with a visible moving hand. <b>Invisible action capture</b> is apparent motion associated with a hand moving out of sight behind the screen.</p><h3>The guide and the experience are separate</h3><p>The hand animation explains how to move. The noise display is the stimulus. Watch the guide, then make the movement yourself: observing an animation and performing an action are different experiences. In the hidden-hand experience, your own hand must remain out of sight behind the screen.</p><h3>Compare dynamic and still noise</h3><p>In the paper’s eight-participant dynamic-versus-static comparison, the iconic trace could occur with still noise; the other three illusions were not reported in that condition. This finding invites comparison, but does not guarantee what you will see. Screen size, viewing distance, movement speed, and attention can affect the experience.</p><h3>Possible explanations</h3><p>For the iconic trace, the authors suggest a contribution from local contrast adaptation and recovery. They also discuss visual occlusion, attention, and action capture in relation to the broader set of illusions. These are proposed contributions, rather than a complete or settled explanation of every observation.</p><h3>Research credit</h3><p>Shinsuke Shimojo, Shengjie Zheng, Kensuke Shimojo, Eiko Shimojo, and Daw-An Wu (2026). <i>“Magnetic sand”: Illusions of interactivity.</i> Journal of Vision, 26(5):3. <a href="https://doi.org/10.1167/jov.26.5.3" target="_blank" rel="noopener noreferrer">Research paper</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13179688/" target="_blank" rel="noopener noreferrer">Open full text</a> · <a href="https://github.com/cantonsir/Magnetic-Sand-Illusions" target="_blank" rel="noopener noreferrer">Research code</a>.</p><p>This independent educational playground generates its stimulus in your browser. The passport records your exploration; it is not a validated perceptual test. Your observations are not sent to a server.</p>'
 },
 zh: {
-brandSub:'探索感知的互动乐园',science:'科学原理',eyebrow:'四种体验，探索大脑的感知。',headline:'沙粒没有跟随你。<br><span>感觉却可能不同。</span>',intro:'随机像素，移动的手，意想不到的错觉。<br>亲自尝试，再看看错觉背后的秘密。',stageCaption:'随机噪声 · 无物理模拟',readyTitle:'一点噪声，一点奇妙。',readyBody:'开启噪声，然后按实验说明操作。用真实的手可体验原始演示。',start:'开始体验',comfort:'本演示包含闪烁的视觉噪声。如果你对闪烁敏感，请选择静态图像。感到不适时立即暂停。',tryStill:'先试试静态图像',play:'播放',pause:'暂停',dynamic:'动态',static:'静态',control:'操作方式',reset:'重置',signal:'噪声是随机的。你的操作只改变灰色圆点。',signalHand:'噪声是随机的。你的手不会改变任何像素。',reveal:'揭开秘密',hideReveal:'收起说明',yourMission:'你的实验',attention:'注意哪里',notice:'你注意到了什么？',noRight:'没有标准答案。每个人的感知都可能不同。',next:'下一个实验',finish:'完成探索',tune:'把它变成你的实验',tuneSub:'小小的调整，可能带来不同的感受。',preset:'恢复推荐设置',grain:'颗粒大小',rate:'刷新频率',contrast:'对比度',fine:'细',coarse:'粗',slow:'慢',fast:'快',soft:'柔和',strong:'强',passport:'你的探索护照',restart:'重新探索',scienceTitle:'像素是随机的，感受却不简单。',scienceTeaser:'磁性沙粒错觉探索视觉系统如何结合随机图像与自身动作。本互动乐园受到 Shimojo 及同事研究的启发。',readScience:'了解科学原理',footerLab:'开放的感知探索乐园',paper:'研究论文',source:'原始研究与代码',noTracking:'无需登录，不追踪。',behind:'错觉背后的科学',ghostPad:'在这里移动',ghostNote:'观察噪声',ready:'准备好就开始',paused:'已暂停 · 空格键继续',still:'静态噪声',running:'动态噪声',pointer:'鼠标 / 触摸 · 改编',auto:'观看圆点演示',hand:'真实的手 · 原始任务',adaptation:'鼠标 / 触摸是探索性改编。选择“真实的手”可尝试原始演示。',autoNote:'圆点展示遮挡线索。观看动作与自己做动作的体验不同。',handNote:'让手靠近屏幕但不要触碰。保持设备稳定，大屏幕可能更容易观察。',observationLabels:['明显变化','轻微变化','没有变化','不确定'],feedback:'已记录。好奇心就是收获，不必一定看到错觉。',tryFirst:'请先开始体验，再记录观察。',saved:'已记录',passportTitle:'四种方式，重新认识你的视觉。',passportDescription:'尝试每个实验，记录你的观察。进度只保存在当前设备。',completeTitle:'你已探索全部四种错觉。',completeDescription:'无论沙粒看起来在动，还是始终静止，你的观察都很有意义。可随时返回比较。',completeToast:'探索护照已完成，继续尝试新的条件吧！',timedPause:'已体验 45 秒。休息一下，记录你注意到的变化。',hiddenPause:'离开页面时已自动暂停，准备好后点击播放。',resetToast:'已恢复设置，噪声已暂停。',restartToast:'已清空护照，开始新一轮探索。',rateNote:'颗粒大小采用 CSS 像素；刷新频率为目标值，可能受屏幕限制。',measured:'实际刷新',pauseHelp:'空格：播放 / 暂停 · Esc：停止 · 方向键：移动圆点',hiddenHelp:'在旁边的区域移动，也可用方向键。继续注视噪声。',handHelp:'在屏幕附近使用真实的手。空格：播放 / 暂停 · Esc：停止',stillCaveat:'原始研究中，轨迹错觉可出现在静态噪声中，另外三种依赖动态噪声。',title:'磁性沙粒 · 感知的互动乐园',languageLabel:'Switch to English',fullscreen:'进入全屏',exitFullscreen:'退出全屏',closeScience:'关闭科学说明',canvasLabel:'独立随机噪声，不受手或指针控制。',modeGroup:'四种错觉',noiseGroup:'噪声模式',ghostLabel:'隐藏手改编体验的侧边移动区域',rateLabel:'目标噪声刷新频率',grainLabel:'颗粒大小（CSS 像素）',contrastLabel:'噪声对比度',reduced:'设备已启用减少动态效果，你可以先尝试“静态”模式。',revealTitle:'噪声里没有任何东西在跟随你。',revealBody:'每次刷新时，每个颗粒独立随机选择两种亮度之一。指针只改变另一图层上的灰色遮挡圆点。在“真实的手”模式下，屏幕根本不接收手部信息。',revealStatic:'在动态与静态之间切换，重复同一个动作。你的感受有什么不同？',noCapture:'不使用摄像头或手势追踪。你的记录只保留在当前浏览器。',
+brandSub:'用双手探索视觉的奥妙',science:'研究与原理',eyebrow:'四种手部动作，四段视觉探索',
+headline:'手在动。<br><span>沙粒也在动吗？</span>',intro:'一片随机噪声，加上你自己的手。<br>试试四个简单的动作，看看你会注意到什么。',
+stageCaption:'随机噪声 · 亲手体验',readyTitle:'伸出手，开始观察。',readyBody:'先看看动作示范，再开启噪声，用自己的手在屏幕附近试一试。',
+start:'开始探索',comfort:'画面包含持续闪烁的视觉噪声。对闪烁敏感时，请先选择静态画面；如有不适，立即暂停并移开视线。',
+tryStill:'先试试静态画面',play:'播放噪声',pause:'暂停噪声',dynamic:'动态噪声',static:'静态噪声',control:'体验方式',reset:'重置',
+signal:'噪声始终随机生成，你的手不会改变画面。',signalHand:'噪声始终随机生成，你的手不会改变画面。',
+reveal:'这种感觉从何而来？',hideReveal:'收起说明',yourMission:'试试这个动作',attention:'看哪里',
+notice:'你观察到了什么？',noRight:'感受没有对错。看到变化、没看到变化，或暂时不确定，都可以如实记录。',
+next:'试试下一种',finish:'完成本次探索',tune:'调整观察条件',tuneSub:'每次调整一项，再重复同样的手部动作。',
+preset:'恢复初始设置',grain:'颗粒大小',rate:'刷新频率',contrast:'对比度',fine:'细',coarse:'粗',slow:'慢',fast:'快',soft:'低',strong:'高',
+passport:'你的探索记录',restart:'开始新一轮探索',scienceTitle:'画面是随机的。<br>感受可能出乎意料。',
+scienceTeaser:'“磁性沙粒”错觉让我们探索：自身动作和注意力，如何影响我们对随机画面的感知。本网站的灵感来自 Shimojo 及其同事的研究。',
+readScience:'了解这项研究',footerLab:'人人都能参与的视觉探索',paper:'研究论文',source:'研究与源代码',noTracking:'无需登录，不追踪使用情况。',
+behind:'体验背后的研究',ready:'准备好就开始',paused:'已暂停 · 按空格键继续',still:'静态噪声',running:'动态噪声',
+hand:'用自己的手',handOnly:'用自己的手亲自体验',handNote:'让手靠近屏幕，不要触碰。保持设备稳定；体验看得见的手时，较大的屏幕可能更方便。',
+tryMovement:'用自己的手试试 →',tutorial:'看看手该怎么动',tutorialLabel:'动作示范',tutorialPlay:'播放示范',tutorialPause:'暂停示范',tutorialReplay:'重播示范',tutorialStep:'步骤',
+tutorialNote:'动画只示范手部动作。体验错觉时，请看着噪声画面，用自己的手亲自尝试。',
+tutorialDuration:'8 秒动作示范',diagramFront:'屏幕正面',diagramBack:'屏幕背面（动作示意）',
+observationLabels:['看到了变化','似乎有些变化','没看到变化','还不确定'],
+feedback:'已记录你的观察。即使没有看到错觉，也可以完成这次探索。',tryFirst:'请先开始体验，再记录你的观察。',saved:'已记录',
+passportTitle:'四个动作，记录自己的感受。',passportDescription:'依次尝试四种动作，记录你观察到的现象。进度只保存在当前浏览器中。',
+completeTitle:'四种体验，你都试过了。',completeDescription:'你可以随时返回，比较动态与静态噪声，或调整观察条件再试一次。',
+completeToast:'四种体验均已记录，你仍可以继续探索。',timedPause:'噪声已在播放 45 秒后自动暂停。休息一下，再记录你观察到的现象。',
+hiddenPause:'离开页面时，噪声已自动暂停。准备好后，点击“播放噪声”继续。',
+resetToast:'已恢复初始设置，噪声已暂停。',restartToast:'已清空探索记录，可以开始新一轮体验。',
+rateNote:'颗粒大小以 CSS 像素计；刷新频率为目标值，实际频率取决于屏幕和设备性能。',measured:'实际频率',
+pauseHelp:'空格键：播放／暂停噪声 · Esc：停止',handHelp:'用自己的手体验 · 空格键：播放／暂停噪声 · Esc：停止',
+stillCaveat:'论文对八位参与者的比较发现，静态噪声下仍可出现轨迹残留；另外三种错觉在该条件下未被报告。',
+title:'磁性沙粒 · 用双手探索视觉',languageLabel:'Switch to English',fullscreen:'进入全屏',exitFullscreen:'退出全屏',closeScience:'关闭研究说明',
+canvasLabel:'独立随机生成的视觉噪声，手部动作不会改变画面。',modeGroup:'四种手部体验',noiseGroup:'噪声显示方式',
+rateLabel:'噪声目标刷新频率',grainLabel:'颗粒大小，单位为 CSS 像素',contrastLabel:'噪声对比度',
+reduced:'你的设备已开启减少动态效果，可以先从静态噪声开始。',
+revealTitle:'屏幕并没有对你的手作出响应。',
+revealBody:'每次刷新时，每个颗粒都独立、随机地选择两种亮度之一。程序没有让颗粒跟随或避开你的手，也不接收任何手部动作信息。',
+revealStatic:'保持手部动作相同，切换动态与静态噪声。你的感受有变化吗？',noCapture:'网站不使用摄像头，也不追踪手部动作。你的观察记录只保存在当前浏览器中。',
 modes:[
-{name:'留下轨迹',scientific:'图像性轨迹错觉',subtitle:'画一个秘密字母，观察它经过的空间。',pointer:['开启噪声，视线保持在灰色圆点附近。','缓慢移动圆点，画 S、圆圈或名字的首字母。','注意圆点刚经过的区域，再用静态噪声重复。'],hand:['开启噪声，将一根指尖靠近屏幕但不要触碰。','用手指缓慢画 S、圆圈或名字的首字母。','注意力集中在指尖附近，尤其是刚经过的区域。'],attention:'集中观察指尖或圆点附近，包括它刚经过的路径。',explanation:'有些人会看到沿手指轨迹短暂出现的亮痕或暗痕。屏幕没有画出轨迹。作者提出局部对比度适应与恢复可能有贡献。研究中，该效应可保留在静态噪声里。'},
-{name:'推开与吸引',scientific:'排斥 / 吸引错觉',subtitle:'用真实的手操作，图像始终独立。',hand:['开启动态噪声，手掌面对屏幕并与其平行。','一边缓慢靠近屏幕，一边张开并分开手指，不要触碰。','一边远离屏幕，一边轻轻合拢手指做抓握动作，反复尝试。'],attention:'注意手周围和手指之间的噪声。',explanation:'张开手指并靠近时，沙粒可能像被排斥；合拢手指并远离时，可能像被吸引。这种演示需要真实前后动作与手指开合，鼠标不能复现这些线索。'},
-{name:'带动沙粒',scientific:'可见手动作捕获',subtitle:'小幅度动作，更宽的注意范围。',pointer:['开启动态噪声，缓慢向左右移动灰色圆点。','动作幅度要小，移动几个圆点宽度即可。','把注意力扩展到周围噪声，不要只盯住圆点边缘。'],hand:['开启动态噪声，张开手掌，靠近屏幕并与其平行。','非常缓慢、小幅度地左右移动，避免大幅扫动。','整体观察手和它周围的噪声。'],attention:'同时观察可见手或圆点及其周围更大范围的噪声。',explanation:'随机图像可能像在跟随缓慢移动的可见手。论文讨论动作捕获、遮挡线索和注意力的可能作用。浏览器圆点是探索性改编，尚未验证与真实手等效。'},
-{name:'看不见的手',scientific:'不可见手动作捕获',subtitle:'在图像外移动，在图像内观察。',pointer:['开启动态噪声，在侧边区域移动灰色圆点。','缓慢上下移动，圆点始终在噪声之外。','注视噪声中与圆点高度相近的区域，而非圆点本身。'],hand:['开启动态噪声，将一只手放在屏幕后方、视线以外。','用另一只手或支架稳定设备，让隐藏的手缓慢上下移动。','注视噪声中你想象隐藏手所在的位置。'],attention:'注视隐藏手对应的噪声位置，或与外侧圆点高度相近的区域。',explanation:'即使手在屏幕后方不可见，沙粒也可能看起来在跟随它。论文也描述外侧圆点变体。大显示器后方操作可能不便，可使用稳定的手机或平板。'}
+{
+name:'留下轨迹',gate:'指尖靠近屏幕，不要触碰。缓慢画一个 S 形或圆圈，观察指尖刚刚经过的地方。',scientific:'轨迹残留错觉',subtitle:'慢慢划出一条路径，观察指尖刚刚经过的地方。',
+hand:['开启噪声，将一根手指的指尖靠近屏幕，不要触碰。','在画面前方的空中，缓慢画一个圆圈、S 形或字母。','仔细观察指尖附近，尤其是它刚刚经过的路径。再切换到静态噪声试一次。'],
+phases:['让指尖靠近屏幕','缓慢画出 S 形路径','观察刚划过的路径附近'],
+attention:'把注意力集中在指尖附近，尤其是手指移动后刚露出的区域。',
+explanation:'手指经过的地方可能短暂显得更亮或更暗，仿佛留下了一道痕迹。屏幕并没有绘制轨迹。论文作者提出，局部对比度适应及其恢复可能参与这一体验。研究中的比较发现，静态噪声下也可能出现轨迹残留。'
+},
+{
+name:'张开与合拢',gate:'掌心朝向屏幕，手掌与屏幕平行。张开手并缓慢靠近，再合拢手并缓慢远离。',scientific:'吸引／排斥错觉',subtitle:'靠近时张开手，远离时合拢手。',
+hand:['开启动态噪声，将手放在画面前方，掌心朝向屏幕，手掌与屏幕平行。','缓慢靠近屏幕，同时张开手掌、分开手指。不要触碰屏幕。','缓慢远离屏幕，同时轻轻合拢手指，像要抓住什么一样。重复几次。'],
+phases:['掌心朝向屏幕','张开手，慢慢靠近','合拢手，慢慢远离'],
+attention:'观察手掌周围，以及手指缝隙中的噪声。',
+explanation:'张开手并靠近时，沙粒可能看起来被推开；合拢手并远离时，可能看起来被吸引。这是视觉上的感受，手并未改变画面。这个动作同时改变了手的远近、手指位置，以及对画面的遮挡。'
+},
+{
+name:'看得见的手',gate:'手掌张开、掌心朝向屏幕，与屏幕保持平行。非常缓慢地、小幅度地左右移动，一起观察手和周围的噪声。',scientific:'可见手动作捕获',subtitle:'小幅度移动，把手和周围的噪声一起看。',
+hand:['开启动态噪声，张开手掌并靠近屏幕，掌心朝向屏幕，手掌与屏幕平行。','非常缓慢地、小幅度地左右移动手掌，不要扫过整个画面。','同时观察手掌及其周围的噪声，不必只盯着某一根指尖。'],
+phases:['让手掌与屏幕平行','缓慢向左移动一点','缓慢向右移动一点'],
+attention:'放宽注意范围，把看得见的手和周围较大区域的噪声一起看。',
+explanation:'随机画面可能看起来在跟随缓慢移动的手。论文将其称为“可见手动作捕获”，并讨论注意力和视觉遮挡可能起到的作用。像素的生成始终独立于你的动作。'
+},
+{
+name:'看不见的手',gate:'把手藏在屏幕后方，让它离开视线。保持设备稳定，缓慢上下移动这只手，观察它对应的画面位置。',scientific:'不可见手动作捕获',subtitle:'把手藏在屏幕后，观察它对应的画面位置。',
+hand:['开启动态噪声，将一只手放到屏幕后方，让它离开你的视线。','用支架或另一只手保持设备稳定，再让藏起来的手缓慢上下移动。','观察噪声中你想象这只手所在的位置。使用放置稳妥的手机或平板，可能更方便操作。'],
+phases:['把手藏到屏幕后方','缓慢向上移动','缓慢向下移动'],
+attention:'注视画面中与隐藏的手对应的位置。你看不见手，但知道它大致在哪里。',
+explanation:'即使手藏在屏幕后方，噪声也可能看起来在跟随它移动。论文将其称为“不可见手动作捕获”。亲自体验时，请让手保持在视线之外，并保持屏幕稳定。'
+}
 ],
-scienceHTML:'<p>四种体验采用相同的刺激：独立随机的视觉噪声。没有任何颗粒被编程为跟随、逃离或吸引你的手。</p><h3>四种注意与动作方式</h3><p><b>轨迹错觉</b>：短暂的主观路径。<b>排斥 / 吸引</b>：对张开、合拢、靠近和远离产生的主观响应。<b>可见手动作捕获</b>：与可见手相关的主观运动。<b>不可见手动作捕获</b>：与隐藏手相关的主观运动。</p><h3>尝试原始手部演示</h3><p>选择<b>真实的手</b>体验论文中的任务。鼠标、触摸和自动圆点均为探索性浏览器改编。论文讨论计算机变体，并提出未来研究鼠标控制的遮挡物；这些操作的等效性尚未验证。</p><h3>值得尝试的比较</h3><p>论文中八位参与者的动态与静态比较研究发现，静态噪声可支持轨迹错觉，其余三种在该条件下未出现。这提供比较条件的理由，但不保证一定看到某种效果。观看距离、时序、注意、屏幕大小和动作都会影响体验。</p><h3>为什么可能发生？</h3><p>作者讨论对比度适应、视觉遮挡、注意力与动作捕获。这些是可能的贡献因素，而非对每种观察的确定解释。</p><h3>研究来源</h3><p>Shinsuke Shimojo、Shengjie Zheng、Kensuke Shimojo、Eiko Shimojo 和 Daw-An Wu（2026）。<i>“Magnetic sand”: Illusions of interactivity.</i> Journal of Vision，26(5):3。<a href="https://doi.org/10.1167/jov.26.5.3" target="_blank" rel="noopener noreferrer">研究论文</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13179688/" target="_blank" rel="noopener noreferrer">开放全文</a> · <a href="https://github.com/cantonsir/Magnetic-Sand-Illusions" target="_blank" rel="noopener noreferrer">研究代码</a>。</p><p>本独立教育网站在浏览器中生成刺激。护照记录探索过程，并非经过验证的感知测量。任何观察都不会上传到服务器。</p>'
+scienceHTML:'<p>四种体验都使用独立随机生成的视觉噪声。你用自己的手完成动作，屏幕不会检测这些动作。程序没有让任何颗粒跟随、避开或聚集到手的周围。</p><h3>四种动作，四种体验</h3><p><b>轨迹残留错觉（Iconic trace）</b>：手指经过后，似乎短暂留下一道痕迹。<b>吸引／排斥错觉</b>：张开手并靠近，或合拢手并远离时，沙粒似乎作出响应。<b>可见手动作捕获（Visible action capture）</b>：沙粒似乎随着看得见的手移动。<b>不可见手动作捕获（Invisible action capture）</b>：手藏在屏幕后方时，沙粒仍可能看起来随它移动。</p><h3>先看示范，再亲自尝试</h3><p>手部动画用于说明动作。看过示范后，请看着噪声画面，用自己的手亲自尝试。观看动画与亲自行动，是不同的体验。体验“看不见的手”时，你自己的手应始终藏在屏幕后方，不能出现在视线中。</p><h3>比较动态与静态噪声</h3><p>论文对八位参与者进行的动态与静态比较发现，静态噪声下仍可出现轨迹残留；另外三种错觉在该条件下未被报告。这个结果值得亲自比较，但不保证你一定会看到某种现象。屏幕大小、观看距离、动作速度和注意方式，都可能影响体验。</p><h3>可能的解释</h3><p>对于轨迹残留，作者提出局部对比度适应及其恢复可能起到作用。论文还讨论了视觉遮挡、注意力和动作捕获与这些错觉的关系。这些是可能的解释因素，并非对每一种观察结果都已得到完整、确定的解释。</p><h3>研究来源</h3><p>Shinsuke Shimojo、Shengjie Zheng、Kensuke Shimojo、Eiko Shimojo 和 Daw-An Wu（2026）。<i>“Magnetic sand”: Illusions of interactivity.</i> Journal of Vision，26(5):3。<a href="https://doi.org/10.1167/jov.26.5.3" target="_blank" rel="noopener noreferrer">研究论文</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13179688/" target="_blank" rel="noopener noreferrer">开放全文</a> · <a href="https://github.com/cantonsir/Magnetic-Sand-Illusions" target="_blank" rel="noopener noreferrer">研究代码</a>。</p><p>本网站是独立的科普演示，在你的浏览器中生成刺激。探索记录用于回顾体验，并非经过验证的感知测验。你的观察不会上传到服务器。</p>'
 }
 };
-const autoInstructions = {
-  en: [
-    ['Start the noise. The gray dot draws a slow looping path.','Follow the dot with narrow attention near its recent path.','Compare Dynamic and Still, then try moving it yourself.'],
-    [],
-    ['Start dynamic noise. The gray dot moves gently side to side.','Take in the noise around the dot as a broad area.','Then choose Mouse / touch or Real hand to compare your own action.'],
-    ['Start dynamic noise. The dot moves in the side pad.','Watch the noise level with the dot, rather than the dot itself.','Then try moving the dot or your hidden hand yourself.']
-  ],
-  zh: [
-    ['开启噪声，灰色圆点会自动缓慢画出曲线路径。','把注意力集中在圆点附近及它刚经过的位置。','比较动态与静态，再尝试自己移动圆点。'],
-    [],
-    ['开启动态噪声，灰色圆点会小幅度左右移动。','把周围的噪声作为更宽的区域一起观察。','再选择鼠标 / 触摸或真实的手，比较自身动作。'],
-    ['开启动态噪声，圆点会在侧边区域上下移动。','观察与圆点同高的噪声区域，不要注视圆点本身。','再尝试自己移动圆点或隐藏的手。']
-  ]
-};
-for (const language of ['en', 'zh']) content[language].modes.forEach((mode, i) => { mode.auto = autoInstructions[language][i]; });

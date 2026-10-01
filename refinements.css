@@ -1,22 +1,15 @@
-/* Final readability and observation controls. */
-.quick-stop{color:var(--accent);background:#273245;border:1px solid #56627a;border-radius:5px;min-height:32px;padding:6px 12px;font-size:14px;letter-spacing:0}
-.condition-note{font-size:13px;line-height:1.6;border-left:2px solid var(--accent);padding:9px 11px;color:#d2dbea;background:#273041;margin:12px 0}
-.stage:after{content:attr(data-help);position:absolute;bottom:10px;left:32px;right:32px;font-size:12px;color:#8f9caf;text-align:center;pointer-events:none}
-.stage-gate{z-index:3}
-.guide-top .eyebrow,.passport .eyebrow,.stage-toolbar,.mode-tab small,.reset-button,.input-label,.range-ends,.tuning-footnote,.tuning-heading p,.tuning-heading .text-button,.signal-strip p,.signal-strip .text-button,.adaptation-note,footer{font-size:12px}
-.attention-card b,.attention-card p,.observation>p,.observation-options button{font-size:14px}
-.observation-options button{min-height:44px}
-.guide-subtitle,.instruction-list li{font-size:15px}
-.icon-button{min-width:36px;min-height:36px}
-.stage-toolbar{height:49px}
-.stage-toolbar>span:first-child{white-space:nowrap}
-.passport p:not(.eyebrow){font-size:14px}
-.stamp{min-width:44px;min-height:44px;background:transparent}
-.stamp.done{background:#202a30}
-@media(min-width:851px){.lab-grid{grid-template-columns:minmax(0,1fr) 340px}.experiment-panel{display:flex;flex-direction:column}.stage{flex:1;min-height:405px}}
-html[lang=zh-CN] h1{font-size:37px;line-height:1.2;letter-spacing:0}
-html[lang=zh-CN] h1 br{display:block}
-html[lang=zh-CN] .intro-copy{max-width:350px}
-@media(max-width:850px){.guide-panel{display:block}.guide-top,.instruction-list{max-width:100%}.guide-panel h2{margin-top:14px}.instruction-list{gap:12px}.guide-panel .observation-options{grid-template-columns:repeat(4,1fr)}.observation .next-button{max-width:300px}.stage:after{bottom:9px}}
-@media(max-width:600px){.stage-gate{gap:10px;padding:18px}.stage-gate h2{font-size:22px}.stage-gate .comfort-note{font-size:12px}.stage{height:365px;padding:22px 18px 32px}.stage-toolbar{padding:7px 12px;font-size:11px}.quick-stop{min-height:36px;padding:6px 10px;margin-left:auto}.stage-toolbar .icon-button{margin-left:0}.stage:after{left:14px;right:14px;font-size:11px;bottom:8px}.signal-strip p,.signal-strip .text-button{font-size:12px}.guide-panel .observation-options{grid-template-columns:1fr 1fr}.observation .next-button{max-width:none}.transport select{max-width:100%;flex:1;min-width:130px}.transport .play-button,.segmented button{min-height:40px}.language-button{min-height:40px}.tuning-heading .text-button{font-size:14px}.science-teaser p{font-size:16px}.site-header nav{gap:10px}.mode-tab small{font-size:12px}.mode-number{min-width:18px}.mode-tab{gap:8px}html[lang=zh-CN] h1{font-size:32px}.passport p:not(.eyebrow){font-size:14px}}
-@media(max-width:360px){.mode-tab b{font-size:14px}.mode-tab small{font-size:11px}.brand small{display:none}.stage-toolbar{font-size:10px}.stage-gate .gate-symbol{display:none}.stage-gate h2{font-size:20px}}
+/* Comfortable line spacing and native Chinese typography. */
+html[lang=zh-CN] .eyebrow{letter-spacing:1px}
+html[lang=zh-CN] h1{font-size:43px;line-height:1.22;letter-spacing:1px}
+html[lang=zh-CN] .intro-copy{line-height:1.9;max-width:360px}
+html[lang=zh-CN] .mode-tab b{font-weight:500;letter-spacing:.4px}
+html[lang=zh-CN] .guide-panel h2{letter-spacing:.5px}
+html[lang=zh-CN] .instruction-list li{font-size:15px;line-height:1.75}
+html[lang=zh-CN] .guide-subtitle,html[lang=zh-CN] .attention-card p{line-height:1.75}
+html[lang=zh-CN] .stage-gate p{line-height:1.8}
+html[lang=zh-CN] .hand-label{letter-spacing:.3px}
+html[lang=zh-CN] #science-content p{line-height:1.9}
+@media(max-width:1180px){html[lang=zh-CN] h1{font-size:37px}}
+@media(max-width:800px){html[lang=zh-CN] h1{font-size:35px}html[lang=zh-CN] .intro-copy{max-width:265px}}
+@media(max-width:600px){html[lang=zh-CN] h1{font-size:33px;line-height:1.25}html[lang=zh-CN] .intro-copy{max-width:none;font-size:15px}html[lang=zh-CN] .mode-tab b{font-size:15px}html[lang=zh-CN] .mode-tab small{font-size:11px}html[lang=zh-CN] .instruction-list li{font-size:16px}html[lang=zh-CN] .stage{height:420px}html[lang=zh-CN] .stage-gate h2{font-size:24px}html[lang=zh-CN] .phase-row p{font-size:15px}}
+@media(max-width:360px){html[lang=zh-CN] .mode-tab b{font-size:14px}html[lang=zh-CN] .stage{height:450px}}
