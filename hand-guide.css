@@ -1,0 +1,24 @@
+/* Movement is controlled by render(progress), so Pause freezes every scene. */
+.hand-guide{height:242px;min-height:220px;align-items:center;background:radial-gradient(ellipse at 50% 40%,#24364b66,transparent 72%)}
+.hand-guide .hand-scene{display:block;width:100%;height:100%;max-height:270px;overflow:hidden}
+.hand-scene .scene-label{font:10px 'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:#afbed0;letter-spacing:.55px}
+.hand-scene .scene-axis{stroke:#51687f;stroke-width:1;fill:none}
+.hand-scene .scene-arrow{stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.hand-scene .scene-arrowhead{stroke:var(--accent)}
+.hand-scene .scene-teaching-path{fill:none;stroke:var(--accent);stroke-width:1.7;stroke-dasharray:2 6;stroke-linecap:round;opacity:.42}
+.hand-scene .scene-sight-cone{fill:#9ab1cc;opacity:.065}
+.hand-scene .scene-sight-line{fill:none;stroke:#9eb1c8;stroke-width:1.2;stroke-dasharray:3 5;opacity:.7}
+.hand-scene .scene-eye{fill:none;stroke:#aec0d5;stroke-width:1.5;stroke-linejoin:round}
+.hand-scene .scene-eye circle{fill:#aec0d5;stroke:none}
+html[lang=zh-CN] .hand-scene .scene-label{font-size:11px;letter-spacing:.25px}
+.movement-card-heading{padding-bottom:3px}
+.guide-play{white-space:nowrap;flex-shrink:0}.tutorial-controls>span{text-align:right}
+.phase-row{min-height:56px}
+@media(max-width:800px){.hand-guide{height:244px}}
+@media(max-width:600px){.hand-guide{height:250px;min-height:235px}.hand-scene .scene-label{font-size:11px}}
+
+/* Inspect each gesture at your pace, or expand the scene. */
+.movement-card-heading{gap:7px;letter-spacing:.35px}.movement-card-heading>span:first-child{flex-shrink:0}.movement-card-heading #tutorial-view{color:var(--muted);font-size:10px;letter-spacing:0;text-align:right;margin-left:auto;line-height:1.4}.guide-expand{background:#203047;border:1px solid #415775;color:#c5d3e4;width:32px;height:32px;border-radius:6px;font-size:22px;flex-shrink:0;display:grid;place-items:center}.guide-steps{display:flex;gap:6px;padding:3px 14px 10px}.guide-step{flex:1;background:#19293c;border:1px solid #3e536d;color:#afbed0;border-radius:6px;min-height:36px;font-size:11px;padding:6px 4px}.guide-step.active{color:var(--accent);border-color:var(--accent);background:#26354a}.phase-row{padding-top:2px}.phase-row>span{font-size:10px}.phase-row p{font-size:13px}
+.movement-card:fullscreen{width:100vw;height:100vh;border:0;border-radius:0;display:flex;flex-direction:column;justify-content:center;background:#101a29;padding:20px;overflow:auto}.movement-card:fullscreen>.movement-card-heading,.movement-card:fullscreen>.guide-steps,.movement-card:fullscreen>.phase-row,.movement-card:fullscreen>.tutorial-controls,.movement-card:fullscreen>.tutorial-track{width:min(740px,100%);margin-left:auto;margin-right:auto}.movement-card:fullscreen>.hand-guide{width:min(740px,100%);height:min(64vh,570px);min-height:180px;margin:5px auto}.movement-card:fullscreen .hand-scene{max-height:none}.movement-card:fullscreen .scene-label{font-size:11px}.movement-card:fullscreen .phase-row{justify-content:center;min-height:52px}.movement-card:fullscreen .phase-row p{font-size:18px}.movement-card:fullscreen .guide-step{font-size:14px;min-height:42px}.movement-card:fullscreen .guide-play{min-height:44px;font-size:15px}
+@media(max-width:600px){.guide-step{font-size:12px;min-height:40px}.movement-card-heading #tutorial-view{font-size:10px}.movement-card:fullscreen{padding:13px}.movement-card:fullscreen .phase-row p{font-size:16px}.movement-card:fullscreen>.hand-guide{height:min(55vh,480px);min-height:200px}}
+@media(max-width:400px){.guide-play{font-size:12px;padding:8px 10px}.tutorial-controls>span{font-size:10px}}

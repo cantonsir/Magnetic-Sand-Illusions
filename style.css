@@ -39,3 +39,5 @@ dialog{background:#151f30;color:var(--text);border:1px solid #4e607b;border-radi
 
 .stage-gate{overflow-y:auto;justify-content:safe center}.stage-gate>*{flex-shrink:0}
 @media(max-width:600px){html .stage.is-ready{height:auto;min-height:400px;padding:0}.stage.is-ready .noise-viewport{position:absolute;inset:16px 14px 34px;width:auto;height:auto}.stage.is-ready .stage-gate{position:relative;min-height:400px;width:100%;padding:24px 18px}}
+/* Keep playback click targets steady while the timer and frames advance. */
+.play-button{min-width:132px;white-space:nowrap}#play-icon{display:inline-block;width:1em;text-align:center}.stage-toolbar>span:first-child{font-variant-numeric:tabular-nums}.stage-toolbar #quick-stop{margin-left:auto;flex-shrink:0}.stage-toolbar #fullscreen{margin-left:auto}.stage-toolbar #quick-stop:not([hidden])+#fullscreen{margin-left:0}

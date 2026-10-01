@@ -1,47 +1,120 @@
-/** A separate instructional diagram. Never drawn into the noise stimulus. */
+/** Instructional scenes only. These images are never part of the noise stimulus. */
 export function createHandGuide(container, mode) {
-  const hand = `
-    <g class="guide-hand" stroke="#b88758" stroke-width="1.6" stroke-linejoin="round">
-      <path d="M-21 55 L-22 102 Q0 109 23 102 L22 55" fill="#dbaa76"/>
-      <path d="M-35-8 Q-41 3-37 30 Q-34 57-20 65 Q1 75 24 58 Q35 44 35 5 L30-10Z" fill="#f2c997"/>
-      ${[-26,-9,9,26].map((x,i)=>`<g data-finger="${i}" transform="translate(${x},-5)"><path d="M-7 3V-${[57,70,61,43][i]}Q-7-${[70,83,74,56][i]} 0-${[70,83,74,56][i]}Q7-${[70,83,74,56][i]} 7-${[57,70,61,43][i]}V3" fill="#f2c997"/>${mode===1||mode===2?`<rect x="-4" y="-${[64,77,68,50][i]}" width="8" height="11" rx="3" fill="#fae0c4" stroke="#cd9e72" stroke-width="1"/>`:'<path d="M-5-18H5" opacity=".35" fill="none"/>'}</g>`).join('')}
-      <path data-thumb="open" d="M-32 17 Q-49-7-61 1 Q-68 7-61 18 L-40 48 Q-29 56-19 42" fill="#f2c997"/>
-      <path data-thumb="closed" d="M-32 10 Q-37-5-24-6 L8 10 Q21 15 12 28 L-14 35 Q-25 34-31 27" fill="#efbf89" opacity="0"/>
-      ${mode===1||mode===2?'<path d="M-15 51L-21 11M1 54L-2 10M14 46L17 10" opacity=".16" fill="none"/>':'<path d="M-18 45Q-3 38 14 42M-11 20Q0 12 17 15" opacity=".3" fill="none"/>'}
+  const assets = ['hand-open-v3.webp', 'hand-closed-v3.webp', 'hand-point-v3.webp'];
+  const chinese = document.documentElement.lang.startsWith('zh');
+  const words = chinese
+    ? { screen: '屏幕', farther: '远一些', nearer: '靠近', you: '你的视线', behind: '手藏在屏幕后' }
+    : { screen: 'SCREEN', farther: 'FARTHER', nearer: 'CLOSER', you: 'YOUR VIEW', behind: 'HAND BEHIND SCREEN' };
+  const id = `hand-scene-${mode}`;
+  const speckles = Array.from({ length: 44 }, (_, n) => {
+    const x = (n * 17 + 3) % 48, y = (n * 29 + 7) % 48;
+    return `<rect x="${x}" y="${y}" width="${n % 3 + 1}" height="2" fill="${n % 2 ? '#dae4ef' : '#080e16'}" opacity=".38"/>`;
+  }).join('');
+  const defs = `<defs>
+    <linearGradient id="${id}-frame" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a4b5c8"/><stop offset=".43" stop-color="#566b82"/><stop offset="1" stop-color="#34485e"/></linearGradient>
+    <linearGradient id="${id}-glass" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#26374a"/><stop offset="1" stop-color="#142334"/></linearGradient>
+    <linearGradient id="${id}-stand" x1="0" x2="1"><stop stop-color="#263a4d"/><stop offset=".45" stop-color="#899aac"/><stop offset="1" stop-color="#32485d"/></linearGradient>
+    <pattern id="${id}-grain" width="48" height="48" patternUnits="userSpaceOnUse">${speckles}</pattern>
+    <filter id="${id}-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".3"/></filter>
+    <marker id="${id}-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path class="scene-arrowhead" d="M1 1L6 4L1 7" fill="none" stroke-width="1.5" stroke-linejoin="round"/></marker>
+  </defs>`;
+  const text = (x, y, value, extra = '') => `<text x="${x}" y="${y}" class="scene-label" ${extra}>${value}</text>`;
+  const photo = (file, pose = '', size = 190, fingertip = false) => `<image ${pose ? `data-pose="${pose}"` : ''} href="${file}" x="${-size * (fingertip ? 215 / 512 : .5)}" y="${fingertip ? -size * 17 / 512 : 0}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet" filter="url(#${id}-shadow)"/>`;
+  const frontScreen = `<g class="scene-device">
+    <path d="M166 224H194L198 249H162Z" fill="url(#${id}-stand)"/>
+    <path d="M130 250Q180 243 230 250L232 255H128Z" fill="#53697f"/>
+    <rect x="24" y="23" width="312" height="207" rx="12" fill="url(#${id}-frame)"/>
+    <rect x="27" y="26" width="306" height="201" rx="9" fill="#0c1724"/>
+    <rect x="33" y="32" width="294" height="188" rx="5" fill="url(#${id}-glass)"/>
+    <rect x="33" y="32" width="294" height="188" rx="5" fill="url(#${id}-grain)" opacity=".33"/>
+    <path d="M42 37H308" stroke="#8498ae" opacity=".15"/>
+  </g>`;
+  const sideScreen = (left = 214, rear = false) => {
+    const right = left + 69;
+    return `<g class="scene-device ${rear ? 'scene-occluding-device' : ''}">
+      <path d="M${left + 26} 216L${left + 29} 250L${left + 46} 255L${left + 44} 220Z" fill="url(#${id}-stand)"/>
+      <path d="M${left + 8} 255L${left + 58} 269L${left + 79} 260L${left + 32} 248Z" fill="#4c6277"/>
+      <path d="M${left - 5} 34L${right} 58L${right} 233L${left - 5} 209Z" fill="#2b3d51" stroke="#8e9eb1" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M${left} 37L${right - 4} 58L${right - 4} 226L${left} 205Z" fill="#101c2b" stroke="#536b84" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M${left + 5} 46L${right - 9} 63L${right - 9} 215L${left + 5} 198Z" fill="url(#${id}-glass)"/>
+      <path d="M${left + 5} 46L${right - 9} 63L${right - 9} 215L${left + 5} 198Z" fill="url(#${id}-grain)" opacity=".32"/>
+      <path d="M${left - 5} 34V209" stroke="#bcc8d5" opacity=".6"/>
     </g>`;
-  const screen = `<g class="guide-screen"><rect x="52" y="27" width="248" height="145" rx="10" fill="#0c1624" stroke="#72849a" stroke-width="2"/><rect x="59" y="34" width="234" height="131" rx="5" fill="${mode===3?'#263446':'#1d2b3d'}"/><path d="M154 173V185M136 186H176" stroke="#72849a" stroke-width="3" stroke-linecap="round"/>${mode===3?'<path d="M174 91h-36v25h36z" fill="none" stroke="#536983" stroke-width="1.5"/>':'<path d="M74 51H94M111 51H131M148 51H168M185 51H205M222 51H242M259 51H279M74 75H94M111 75H131M148 75H168M185 75H205M222 75H242M259 75H279M74 99H94M111 99H131M148 99H168M185 99H205M222 99H242M259 99H279M74 123H94M111 123H131M148 123H168M185 123H205M222 123H242M259 123H279M74 147H94M111 147H131M148 147H168M185 147H205M222 147H242M259 147H279" stroke="#627a97" stroke-width="2" opacity=".3"/>'}</g>`;
-  container.innerHTML=`<svg viewBox="0 0 352 216" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="guide-glow"><stop stop-color="#293a51" stop-opacity=".8"/><stop offset="1" stop-color="#162031" stop-opacity="0"/></radialGradient></defs><ellipse cx="176" cy="115" rx="164" ry="102" fill="url(#guide-glow)"/>${screen}<g data-hand-root>${hand}</g></svg>`;
-  const root=container.querySelector('[data-hand-root]');
-  const fingers=[...container.querySelectorAll('[data-finger]')];
-  const openThumb=container.querySelector('[data-thumb="open"]'),closedThumb=container.querySelector('[data-thumb="closed"]');
-  const ease=x=>{const n=Math.max(0,Math.min(1,x));return n*n*(3-2*n);};
-  function render(progress=0) {
-    const p=Math.max(0,Math.min(1,progress));
-    let x=176,y=137,scale=.66,open=1;
-    if(mode===0){
-      const path=ease((p-.17)/.68);
-      x=176+36*Math.sin(path*Math.PI*2);y=93+path*49;scale=.62;
+  };
+  const arrow = (path, extra = '') => `<path d="${path}" class="scene-arrow" fill="none" marker-end="url(#${id}-arrow)" ${extra}/>`;
+  let scene;
+  if (mode === 0) {
+    scene = `${frontScreen}
+      <path d="M177 56C229 40 231 81 182 90C130 103 136 139 183 143" class="scene-teaching-path"/>
+      <g data-hand>${photo(assets[2], '', 185, true)}</g>`;
+  } else if (mode === 1) {
+    scene = `${sideScreen()}
+      ${text(250, 23, words.screen, 'text-anchor="middle"')}
+      <g class="scene-depth-axis">
+        <path d="M69 245H191" class="scene-axis"/>
+        ${arrow('M112 245H186', 'data-toward')}
+        ${arrow('M155 245H74', 'data-away')}
+        ${text(66, 266, words.farther)}${text(191, 266, words.nearer, 'text-anchor="end"')}
+      </g>
+      <g data-hand>${photo(assets[1], 'closed', 195)}${photo(assets[0], 'open', 195)}</g>`;
+  } else if (mode === 2) {
+    scene = `${frontScreen}
+      <g class="scene-small-motion">
+        ${arrow('M145 47H112', 'data-left')}${arrow('M215 47H248', 'data-right')}
+      </g>
+      <g data-hand>${photo(assets[0], '', 198)}</g>`;
+  } else {
+    scene = `<path d="M40 131L150 36V209Z" class="scene-sight-cone"/>
+      <path d="M42 130H145" class="scene-sight-line"/>
+      <g class="scene-eye" transform="translate(29 130)"><path d="M-13 0Q0-13 13 0Q0 13-13 0Z"/><circle r="4"/></g>
+      ${text(29, 155, words.you, 'text-anchor="middle"')}
+      <g data-hand>${photo(assets[0], '', 204)}</g>
+      ${sideScreen(154, true)}
+      ${text(184, 23, words.screen, 'text-anchor="middle"')}
+      <g class="scene-hidden-motion">
+        ${arrow('M329 135V84', 'data-up')}${arrow('M329 151V202', 'data-down')}
+      </g>
+      ${text(280, 23, words.behind, 'text-anchor="middle"')}`;
+  }
+  container.dataset.scene = ['trace', 'depth', 'lateral', 'hidden'][mode];
+  container.innerHTML = `<svg class="hand-scene" viewBox="0 0 360 292" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">${defs}${scene}</svg>`;
+  const hand = container.querySelector('[data-hand]');
+  const open = container.querySelector('[data-pose="open"]');
+  const closed = container.querySelector('[data-pose="closed"]');
+  const cue = name => container.querySelector(`[data-${name}]`);
+  const ease = value => { const n = Math.max(0, Math.min(1, value)); return n * n * (3 - 2 * n); };
+  const emphasize = (first, second, phase) => {
+    first?.setAttribute('opacity', phase === 1 ? '1' : '.35');
+    second?.setAttribute('opacity', phase === 2 ? '1' : '.35');
+  };
+  function render(progress = 0) {
+    const p = Math.max(0, Math.min(1, progress));
+    const phase = p < .18 ? 0 : p < (mode === 0 ? .85 : mode === 1 ? .58 : .51) ? 1 : 2;
+    if (mode === 0) {
+      const t = ease((p - .18) / .67);
+      const u = t < .5 ? t * 2 : (t - .5) * 2, b = 1 - u;
+      const points = t < .5 ? [[177, 56], [229, 40], [231, 81], [182, 90]] : [[182, 90], [130, 103], [136, 139], [183, 143]];
+      const coordinate = dimension => b ** 3 * points[0][dimension] + 3 * b ** 2 * u * points[1][dimension] + 3 * b * u ** 2 * points[2][dimension] + u ** 3 * points[3][dimension];
+      const x = coordinate(0), y = coordinate(1);
+      hand.setAttribute('transform', `translate(${x},${y})`);
+    } else if (mode === 1) {
+      const closer = p < .58 ? ease((p - .18) / .4) : 1 - ease((p - .58) / .4);
+      const pose = p < .58 ? ease((p - .24) / .08) : 1 - ease((p - .75) / .08);
+      hand.setAttribute('transform', `matrix(.64 .19 0 1 ${104 + closer * 64} 42)`);
+      open.setAttribute('opacity', String(pose));
+      closed.setAttribute('opacity', String(1 - pose));
+      emphasize(cue('toward'), cue('away'), phase);
+    } else if (mode === 2) {
+      const x = p < .51 ? 180 - 16 * ease((p - .18) / .33) : 164 + 32 * ease((p - .51) / .39);
+      hand.setAttribute('transform', `translate(${x},47)`);
+      emphasize(cue('left'), cue('right'), phase);
+    } else {
+      const y = p < .51 ? 63 - 24 * ease((p - .18) / .33) : 39 + 48 * ease((p - .51) / .39);
+      hand.setAttribute('transform', `matrix(.68 .16 0 1 247 ${y})`);
+      emphasize(cue('up'), cue('down'), phase);
     }
-    if(mode===1){
-      open=p<.18?0:p<.58?ease((p-.18)/.4):1-ease((p-.58)/.4);
-      scale=.46+open*.29;y=140+open*4;
-    }
-    if(mode===2){
-      x=p<.51?176-19*ease((p-.18)/.33):157+38*ease((p-.51)/.33);y=139;
-    }
-    if(mode===3){
-      y=p<.51?138-22*ease((p-.18)/.33):116+44*ease((p-.51)/.33);scale=.64;
-    }
-    root.setAttribute('transform',`translate(${x},${y}) scale(${scale})`);
-    fingers.forEach((finger,i)=>{
-      const extended=mode===0?(i===0?1:.18):.2+open*.8;
-      const spread=mode===0?0:(open-.25)*[-12,-3,4,13][i];
-      finger.setAttribute('transform',`translate(${[-26,-9,9,26][i]},-5) rotate(${spread}) scale(1,${extended})`);
-    });
-    openThumb.setAttribute('opacity',mode===0?'.25':String(open));
-    closedThumb.setAttribute('opacity',mode===0?'1':String(1-open));
-    return p<.18?0:p<(mode===0?.85:mode===1?.58:.51)?1:2;
+    return phase;
   }
   render();
-  return {render};
+  return { render };
 }

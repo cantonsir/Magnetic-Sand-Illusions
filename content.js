@@ -18,9 +18,9 @@ readScience:'Read about the research',footerLab:'An open playground for percepti
 behind:'BEHIND THE EXPERIENCE',ready:'READY WHEN YOU ARE',paused:'PAUSED · SPACE TO RESUME',still:'STILL NOISE',running:'LIVE NOISE',
 hand:'Your own hand',handOnly:'Explore with your own hand',
 handNote:'Keep your hand close without touching the screen. Keep the device steady; a larger screen can make the visible-hand movements easier.',
-tryMovement:'Try with your own hand →',tutorial:'See the hand movement',tutorialLabel:'MOVEMENT GUIDE',tutorialPlay:'Play the guide',tutorialPause:'Pause the guide',tutorialReplay:'Replay the guide',tutorialStep:'Step',
+tryMovement:'Try with your own hand →',tutorial:'See the hand movement',tutorialLabel:'MOVEMENT GUIDE',tutorialPlay:'Play guide',tutorialResume:'Continue guide',tutorialPause:'Pause guide',tutorialReplay:'Replay guide',tutorialStep:'Movement steps',guideFullscreen:'Enlarge the movement guide',exitGuideFullscreen:'Exit expanded guide',guideFullscreenUnavailable:'This browser cannot expand the guide. You can still use the three step buttons.',
 tutorialNote:'This animation shows the movement only. To explore the illusion, use your own hand with the noise display.',
-tutorialDuration:'8-second movement guide',diagramFront:'Front of screen',diagramBack:'Back of screen (instruction view)',
+tutorialDuration:'8-second guide',diagramFront:'Front of screen',diagramBack:'Side view · hidden hand',diagramDepth:'Angled view · near / far',tutorialHiddenNote:'This side view reveals the setup for learning. During your own experience, the hand must stay behind the screen and completely out of sight.',
 observationLabels:['I noticed a change','Maybe a small change','I noticed no change','I’m not sure'],
 feedback:'Observation recorded. You do not need to see an illusion to complete the exploration.',tryFirst:'Start the experience before recording your observation.',saved:'Recorded',
 passportTitle:'Four movements. Your own observations.',passportDescription:'Try each movement and record what you notice. Your progress stays in this browser.',
@@ -42,28 +42,28 @@ revealStatic:'Compare Dynamic and Still while repeating the same movement. Does 
 noCapture:'No camera or hand tracking is used. Your observations stay in this browser.',
 modes:[
 {
-name:'Leave a trace',gate:'Bring one fingertip close without touching. Slowly draw an S or a loop; watch the area it has just uncovered.',scientific:'Iconic trace',subtitle:'Draw a slow path. Look where your fingertip just passed.',
+name:'Leave a trace',phaseLabels:['Position','Trace','Observe'],gate:'Bring one fingertip close without touching. Slowly draw an S or a loop; watch the area it has just uncovered.',scientific:'Iconic trace',subtitle:'Draw a slow path. Look where your fingertip just passed.',
 hand:['Start the noise. Bring one fingertip close to the screen without touching it.','Slowly draw a loop, an S, or a letter in the air in front of the image.','Look closely around your fingertip and along the path it has just taken. Try again with Still noise.'],
 phases:['Hold a fingertip near the screen','Draw a slow S-shaped path','Look beside the recent path'],
 attention:'Keep your attention close to the fingertip, especially the area it has just uncovered.',
 explanation:'A brief bright or dark trace may appear along your finger’s path. The display draws no trail. The authors suggest that local contrast adaptation and recovery may contribute. In their comparison, a trace could also occur with still noise.'
 },
 {
-name:'Open & close',gate:'Face your palm toward the screen, with your hand parallel to it. Move closer while opening your hand, then move away while gently closing it.',scientific:'Attraction / repulsion',subtitle:'Open as you approach. Close as you pull away.',
+name:'Open & close',phaseLabels:['Position','Open','Close'],gate:'Face your palm toward the screen, with your hand parallel to it. Move closer while opening your hand, then move away while gently closing it.',scientific:'Attraction / repulsion',subtitle:'Open as you approach. Close as you pull away.',
 hand:['Start dynamic noise. Hold your hand in front of the image, with your palm facing and parallel to the screen.','Slowly move closer while opening your hand and spreading your fingers. Do not touch the screen.','Slowly pull away while gently closing your fingers, as if grasping something. Repeat a few times.'],
 phases:['Palm faces the screen','Open and move closer','Close and move away'],
 attention:'Watch the noise around your hand and in the gaps between your fingers.',
 explanation:'The noise may seem to move away as your hand opens and approaches, or toward it as your hand closes and withdraws. These are apparent responses: your hand does not alter the image. This movement combines changes in depth, finger position, and visual occlusion.'
 },
 {
-name:'The visible hand',gate:'Hold an open hand close and parallel to the screen, palm facing it. Move very slowly a little left and right; look broadly around the hand.',scientific:'Visible action capture',subtitle:'Move a little. Take in the hand and the surrounding noise.',
+name:'The visible hand',phaseLabels:['Position','Left','Right'],gate:'Hold an open hand close and parallel to the screen, palm facing it. Move very slowly a little left and right; look broadly around the hand.',scientific:'Visible action capture',subtitle:'Move a little. Take in the hand and the surrounding noise.',
 hand:['Start dynamic noise. Hold an open hand close to the screen, with your palm facing and parallel to it.','Move your hand very slowly from side to side over a small distance. Avoid sweeping across the whole image.','Take in your hand and the surrounding noise together, rather than staring only at a fingertip.'],
 phases:['Hold your hand parallel','Slide slowly to the left','Slide slowly to the right'],
 attention:'Let your attention cover the visible hand and a wider area of noise around it.',
 explanation:'The random field may seem to move with your slowly moving hand. The paper calls this visible action capture and discusses attention and visual occlusion as possible contributors. The pixels remain independent of the movement.'
 },
 {
-name:'The hidden hand',gate:'Hide your hand behind the screen, completely out of view. Keep the device steady and slowly move the hidden hand up and down.',scientific:'Invisible action capture',subtitle:'Hide your hand behind the screen. Watch its imagined location.',
+name:'The hidden hand',phaseLabels:['Hide','Up','Down'],gate:'Hide your hand behind the screen, completely out of view. Keep the device steady and slowly move the hidden hand up and down.',scientific:'Invisible action capture',subtitle:'Hide your hand behind the screen. Watch its imagined location.',
 hand:['Start dynamic noise. Place one hand behind the screen so that you cannot see it.','Keep the device steady with a stand or your other hand. Slowly move the hidden hand up and down.','Watch the part of the noise where you imagine your hidden hand to be. A steady phone or tablet may be easier to use.'],
 phases:['Hide your hand behind the screen','Move slowly upward','Move slowly downward'],
 attention:'Look at the noise in front of the hidden hand’s imagined position.',
@@ -88,9 +88,9 @@ scienceTeaser:'“磁性沙粒”错觉让我们探索：自身动作和注意�
 readScience:'了解这项研究',footerLab:'人人都能参与的视觉探索',paper:'研究论文',source:'研究与源代码',noTracking:'无需登录，不追踪使用情况。',
 behind:'体验背后的研究',ready:'准备好就开始',paused:'已暂停 · 按空格键继续',still:'静态噪声',running:'动态噪声',
 hand:'用自己的手',handOnly:'用自己的手亲自体验',handNote:'让手靠近屏幕，不要触碰。保持设备稳定；体验看得见的手时，较大的屏幕可能更方便。',
-tryMovement:'用自己的手试试 →',tutorial:'看看手该怎么动',tutorialLabel:'动作示范',tutorialPlay:'播放示范',tutorialPause:'暂停示范',tutorialReplay:'重播示范',tutorialStep:'步骤',
+tryMovement:'用自己的手试试 →',tutorial:'看看手该怎么动',tutorialLabel:'动作示范',tutorialPlay:'播放示范',tutorialResume:'继续示范',tutorialPause:'暂停示范',tutorialReplay:'重播示范',tutorialStep:'动作步骤',guideFullscreen:'放大动作示范',exitGuideFullscreen:'收起动作示范',guideFullscreenUnavailable:'此浏览器暂不支持放大示范，仍可点击三个步骤查看动作。',
 tutorialNote:'动画只示范手部动作。体验错觉时，请看着噪声画面，用自己的手亲自尝试。',
-tutorialDuration:'8 秒动作示范',diagramFront:'屏幕正面',diagramBack:'屏幕背面（动作示意）',
+tutorialDuration:'8 秒动作示范',diagramFront:'屏幕正面',diagramBack:'侧面示意 · 手在屏幕后',diagramDepth:'斜侧视图 · 远近与手势',tutorialHiddenNote:'侧面示意图让你看清手该放在哪里。亲自体验时，手要藏在屏幕后方，始终离开你的视线。',
 observationLabels:['看到了变化','似乎有些变化','没看到变化','还不确定'],
 feedback:'已记录你的观察。即使没有看到错觉，也可以完成这次探索。',tryFirst:'请先开始体验，再记录你的观察。',saved:'已记录',
 passportTitle:'四个动作，记录自己的感受。',passportDescription:'依次尝试四种动作，记录你观察到的现象。进度只保存在当前浏览器中。',
@@ -110,28 +110,28 @@ revealBody:'每次刷新时，每个颗粒都独立、随机地选择两种亮�
 revealStatic:'保持手部动作相同，切换动态与静态噪声。你的感受有变化吗？',noCapture:'网站不使用摄像头，也不追踪手部动作。你的观察记录只保存在当前浏览器中。',
 modes:[
 {
-name:'留下轨迹',gate:'指尖靠近屏幕，不要触碰。缓慢画一个 S 形或圆圈，观察指尖刚刚经过的地方。',scientific:'轨迹残留错觉',subtitle:'慢慢划出一条路径，观察指尖刚刚经过的地方。',
+name:'留下轨迹',phaseLabels:['靠近','划动','观察'],gate:'指尖靠近屏幕，不要触碰。缓慢画一个 S 形或圆圈，观察指尖刚刚经过的地方。',scientific:'轨迹残留错觉',subtitle:'慢慢划出一条路径，观察指尖刚刚经过的地方。',
 hand:['开启噪声，将一根手指的指尖靠近屏幕，不要触碰。','在画面前方的空中，缓慢画一个圆圈、S 形或字母。','仔细观察指尖附近，尤其是它刚刚经过的路径。再切换到静态噪声试一次。'],
 phases:['让指尖靠近屏幕','缓慢画出 S 形路径','观察刚划过的路径附近'],
 attention:'把注意力集中在指尖附近，尤其是手指移动后刚露出的区域。',
 explanation:'手指经过的地方可能短暂显得更亮或更暗，仿佛留下了一道痕迹。屏幕并没有绘制轨迹。论文作者提出，局部对比度适应及其恢复可能参与这一体验。研究中的比较发现，静态噪声下也可能出现轨迹残留。'
 },
 {
-name:'张开与合拢',gate:'掌心朝向屏幕，手掌与屏幕平行。张开手并缓慢靠近，再合拢手并缓慢远离。',scientific:'吸引／排斥错觉',subtitle:'靠近时张开手，远离时合拢手。',
+name:'张开与合拢',phaseLabels:['准备','张开','合拢'],gate:'掌心朝向屏幕，手掌与屏幕平行。张开手并缓慢靠近，再合拢手并缓慢远离。',scientific:'吸引／排斥错觉',subtitle:'靠近时张开手，远离时合拢手。',
 hand:['开启动态噪声，将手放在画面前方，掌心朝向屏幕，手掌与屏幕平行。','缓慢靠近屏幕，同时张开手掌、分开手指。不要触碰屏幕。','缓慢远离屏幕，同时轻轻合拢手指，像要抓住什么一样。重复几次。'],
 phases:['掌心朝向屏幕','张开手，慢慢靠近','合拢手，慢慢远离'],
 attention:'观察手掌周围，以及手指缝隙中的噪声。',
 explanation:'张开手并靠近时，沙粒可能看起来被推开；合拢手并远离时，可能看起来被吸引。这是视觉上的感受，手并未改变画面。这个动作同时改变了手的远近、手指位置，以及对画面的遮挡。'
 },
 {
-name:'看得见的手',gate:'手掌张开、掌心朝向屏幕，与屏幕保持平行。非常缓慢地、小幅度地左右移动，一起观察手和周围的噪声。',scientific:'可见手动作捕获',subtitle:'小幅度移动，把手和周围的噪声一起看。',
+name:'看得见的手',phaseLabels:['靠近','向左','向右'],gate:'手掌张开、掌心朝向屏幕，与屏幕保持平行。非常缓慢地、小幅度地左右移动，一起观察手和周围的噪声。',scientific:'可见手动作捕获',subtitle:'小幅度移动，把手和周围的噪声一起看。',
 hand:['开启动态噪声，张开手掌并靠近屏幕，掌心朝向屏幕，手掌与屏幕平行。','非常缓慢地、小幅度地左右移动手掌，不要扫过整个画面。','同时观察手掌及其周围的噪声，不必只盯着某一根指尖。'],
 phases:['让手掌与屏幕平行','缓慢向左移动一点','缓慢向右移动一点'],
 attention:'放宽注意范围，把看得见的手和周围较大区域的噪声一起看。',
 explanation:'随机画面可能看起来在跟随缓慢移动的手。论文将其称为“可见手动作捕获”，并讨论注意力和视觉遮挡可能起到的作用。像素的生成始终独立于你的动作。'
 },
 {
-name:'看不见的手',gate:'把手藏在屏幕后方，让它离开视线。保持设备稳定，缓慢上下移动这只手，观察它对应的画面位置。',scientific:'不可见手动作捕获',subtitle:'把手藏在屏幕后，观察它对应的画面位置。',
+name:'看不见的手',phaseLabels:['藏好','向上','向下'],gate:'把手藏在屏幕后方，让它离开视线。保持设备稳定，缓慢上下移动这只手，观察它对应的画面位置。',scientific:'不可见手动作捕获',subtitle:'把手藏在屏幕后，观察它对应的画面位置。',
 hand:['开启动态噪声，将一只手放到屏幕后方，让它离开你的视线。','用支架或另一只手保持设备稳定，再让藏起来的手缓慢上下移动。','观察噪声中你想象这只手所在的位置。使用放置稳妥的手机或平板，可能更方便操作。'],
 phases:['把手藏到屏幕后方','缓慢向上移动','缓慢向下移动'],
 attention:'注视画面中与隐藏的手对应的位置。你看不见手，但知道它大致在哪里。',
