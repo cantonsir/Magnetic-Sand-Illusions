@@ -1,10 +1,10 @@
 /** Instructional scenes only. These images are never part of the noise stimulus. */
 export function createHandGuide(container, mode) {
-  const assets = ['hand-open-v3.webp', 'hand-closed-v3.webp', 'hand-point-v3.webp'];
+  const assets = ['hand-open-v3.webp', 'hand-closed-v3.webp', 'hand-point-v3.webp', 'hand-palm-v4.webp'];
   const chinese = document.documentElement.lang.startsWith('zh');
   const words = chinese
-    ? { screen: '屏幕', farther: '远一些', nearer: '靠近', you: '你的视线', behind: '手藏在屏幕后' }
-    : { screen: 'SCREEN', farther: 'FARTHER', nearer: 'CLOSER', you: 'YOUR VIEW', behind: 'HAND BEHIND SCREEN' };
+    ? { screen: '屏幕', farther: '远一些', nearer: '靠近', you: '你的视线', behind: '手藏在屏幕后', palm: '掌心朝向你' }
+    : { screen: 'SCREEN', farther: 'FARTHER', nearer: 'CLOSER', you: 'YOUR VIEW', behind: 'HAND BEHIND SCREEN', palm: 'PALM FACING YOU' };
   const id = `hand-scene-${mode}`;
   const speckles = Array.from({ length: 44 }, (_, n) => {
     const x = (n * 17 + 3) % 48, y = (n * 29 + 7) % 48;
@@ -68,13 +68,14 @@ export function createHandGuide(container, mode) {
       <path d="M42 130H145" class="scene-sight-line"/>
       <g class="scene-eye" transform="translate(29 130)"><path d="M-13 0Q0-13 13 0Q0 13-13 0Z"/><circle r="4"/></g>
       ${text(29, 155, words.you, 'text-anchor="middle"')}
-      <g data-hand>${photo(assets[0], '', 204)}</g>
+      <g data-hand>${photo(assets[3], '', 204)}</g>
       ${sideScreen(154, true)}
       ${text(184, 23, words.screen, 'text-anchor="middle"')}
       <g class="scene-hidden-motion">
         ${arrow('M329 135V84', 'data-up')}${arrow('M329 151V202', 'data-down')}
       </g>
-      ${text(280, 23, words.behind, 'text-anchor="middle"')}`;
+      ${text(280, 18, words.behind, 'text-anchor="middle"')}
+      ${text(280, 33, words.palm, 'text-anchor="middle"')}`;
   }
   container.dataset.scene = ['trace', 'depth', 'lateral', 'hidden'][mode];
   container.innerHTML = `<svg class="hand-scene" viewBox="0 0 360 292" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">${defs}${scene}</svg>`;

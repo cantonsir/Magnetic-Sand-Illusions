@@ -1,6 +1,6 @@
 import { noiseFrame } from './noise.js';
-import { content } from './content.js?v=hands3';
-import { createHandGuide } from './hand-guide.js?v=hands3';
+import { content } from './content.js?v=hands4';
+import { createHandGuide } from './hand-guide.js?v=hands4';
 const $ = id => document.getElementById(id);
 const grains = [1,2,4,8,16], colors = ['#edc77a','#ee9b8f','#89d9cd','#b2a4ee'];
 const storageKey = 'magnetic-sand-real-hands-v2';
