@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f5f5f7">
-<meta name="description" content="Explore four Magnetic Sand Illusions with your own hands. Separate animated movement guides, clear English and Chinese instructions, and independent visual noise.">
-<title>Magnetic Sand · Explore with your hands</title>
+<meta name="description" content="Explore four forms of the Magnetic Sand Illusion in random visual noise, using your own hands. Separate animated movement guides, clear English and Chinese instructions, and independent visual noise.">
+<title>Magnetic Sand Illusion · Explore visual noise</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f5f5f7'/%3E%3Cpath d='M7 9h3v3H7zm9-3h3v3h-3zm6 8h3v3h-3zM6 20h3v3H6zm8 4h3v3h-3z' fill='%231d1d1f'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=elegant1">
-<link rel="stylesheet" href="refinements.css?v=elegant1">
-<link rel="stylesheet" href="hand-guide.css?v=elegant1">
-<script src="app.js?v=elegant1" type="module"></script>
+<link rel="stylesheet" href="style.css?v=noise1">
+<link rel="stylesheet" href="refinements.css?v=noise1">
+<link rel="stylesheet" href="hand-guide.css?v=noise1">
+<script src="app.js?v=noise1" type="module"></script>
 </head>
 <body>
 <a class="skip-link" href="#experiment">Skip to experiment</a>
@@ -18,7 +18,7 @@
 <nav aria-label="Main navigation"><a class="nav-link" href="#experience" data-i18n="explore">Explore</a><button class="text-button" id="science-open" data-i18n="science">The science</button><button class="language-button" id="language" aria-label="Switch to Chinese">EN <span>/ 中文</span></button></nav>
 </header>
 <main>
-<section class="intro"><div><p class="eyebrow" data-i18n="eyebrow">An exploration in perception</p><h1 data-i18n="headline">Your hand moves.<br><span>Does the sand?</span></h1></div><p class="intro-copy" data-i18n="intro">A field of random noise. Your own hand.<br>Four simple movements to explore what you see.</p><div class="hero-actions"><a class="primary-button" href="#experience" data-i18n="heroExplore">Explore the illusions</a><a class="text-button" href="#research" data-i18n="heroScience">Discover the science →</a></div></section>
+<section class="intro"><div><p class="eyebrow" data-i18n="eyebrow">Magnetic Sand Illusion</p><h1 data-i18n="headline">Your hand moves.<br><span>Does the noise?</span></h1></div><p class="intro-copy" data-i18n="intro">Random visual noise, made of light and dark pixels.<br>Try four hand movements and observe what you see.</p><div class="hero-actions"><a class="primary-button" href="#experience" data-i18n="heroExplore">Explore the illusions</a><a class="text-button" href="#research" data-i18n="heroScience">Discover the science →</a></div></section>
 <section class="experience" id="experience" aria-label="Illusion playground">
 <div class="section-heading"><div><p class="eyebrow" data-i18n="experienceLabel">THE EXPERIENCE</p><h2 data-i18n="experienceTitle">Four ways to explore.</h2></div><p class="section-description" data-i18n="experienceIntro">Choose a movement. Watch the guide.<br>Then try it with your own hand.</p></div>
 <div class="mode-tabs" role="tablist" aria-label="Four illusion types">
@@ -34,7 +34,7 @@
 <div class="noise-viewport" id="noise-viewport"><canvas id="noise" aria-label="Independent random visual noise"></canvas></div>
 <div class="stage-gate" id="stage-gate"><span class="gate-symbol" aria-hidden="true">∴</span><h2 data-i18n="readyTitle">Ready to try it with your hand?</h2><p id="ready-body" data-i18n="readyBody">Hold a fingertip close to the screen and move slowly.</p><div class="gate-actions"><button class="primary-button" id="start" data-i18n="start">Start the noise</button><button class="secondary-button" id="gate-tutorial" data-i18n="tutorial">See the hand movement</button></div><p class="comfort-note" data-i18n="comfort">This display flickers. Choose Still if you are sensitive to flicker, and stop whenever uncomfortable.</p><button class="text-button" id="still-start" data-i18n="tryStill">Try still noise first</button></div>
 </div>
-<div class="transport"><button class="play-button" id="play" aria-label="Play"><span id="play-icon" aria-hidden="true">▶</span> <span id="play-label" data-i18n="play">Play</span></button><div class="segmented" aria-label="Noise mode"><button class="active" id="dynamic" aria-pressed="true" data-i18n="dynamic">Dynamic</button><button id="static" aria-pressed="false" data-i18n="static">Still</button></div><span class="hand-label" data-i18n="handOnly">Use your own hand</span><button class="text-button reset-button" id="reset" data-i18n="reset">Reset</button></div>
+<div class="transport"><button class="play-button" id="play" aria-label="Play"><span id="play-icon" aria-hidden="true">▶</span> <span id="play-label" data-i18n="play">Play</span></button><div class="segmented" aria-label="Noise mode"><button class="active" id="dynamic" aria-pressed="true" data-i18n="dynamic">Dynamic</button><button id="static" aria-pressed="false" data-i18n="static">Still</button></div></div>
 <div class="signal-strip"><span class="signal-icon" aria-hidden="true">⌁</span><p data-i18n="signal">The noise stays independent of your hand.</p><button class="text-button" id="reveal" aria-expanded="false" data-i18n="reveal">What is happening?</button></div>
 <div class="reveal-panel" id="reveal-panel" hidden></div>
 </div>
@@ -55,7 +55,7 @@
 <section class="passport"><div><p class="eyebrow" data-i18n="passport">YOUR EXPLORER PASSPORT</p><h2 id="passport-title"></h2><p id="passport-description"></p></div><div class="stamps" id="stamps"></div><span class="passport-count" id="passport-count">0 / 4</span><button class="text-button" id="restart" data-i18n="restart">Start over</button></section>
 <section class="science-teaser" id="research"><div><p class="eyebrow" data-i18n="behind">BEHIND THE ILLUSION</p><h2 data-i18n="scienceTitle">Random pixels, a surprising experience.</h2><p data-i18n="scienceTeaser">Inspired by research on how vision and our own actions interact.</p></div><button class="secondary-button" id="science-more" data-i18n="readScience">Explore the science</button></section>
 </main>
-<footer><span>MAGNETIC SAND <span class="footer-divider">/</span> <span data-i18n="footerLab">An open perception playground</span></span><div><a href="https://doi.org/10.1167/jov.26.5.3" target="_blank" rel="noopener noreferrer" data-i18n="paper">Research paper</a><a href="https://github.com/cantonsir/Magnetic-Sand-Illusions" target="_blank" rel="noopener noreferrer" data-i18n="source">Research & code</a><span data-i18n="noTracking">No sign-in. No tracking.</span></div></footer>
+<footer><span>MAGNETIC SAND ILLUSION <span class="footer-divider">/</span> <span data-i18n="footerLab">An open perception playground</span></span><div><a href="https://doi.org/10.1167/jov.26.5.3" target="_blank" rel="noopener noreferrer" data-i18n="paper">Research paper</a><a href="https://github.com/cantonsir/Magnetic-Sand-Illusions" target="_blank" rel="noopener noreferrer" data-i18n="source">Research & code</a><span data-i18n="noTracking">No sign-in. No tracking.</span></div></footer>
 <dialog id="science-dialog" aria-labelledby="science-dialog-title"><button class="dialog-close icon-button" id="science-close" aria-label="Close science explanation">×</button><p class="eyebrow" data-i18n="behind">BEHIND THE ILLUSION</p><h2 id="science-dialog-title" data-i18n="scienceTitle">Random pixels, a surprising experience.</h2><div id="science-content"></div></dialog>
 <div class="toast" id="toast" role="status" hidden></div>
 </body>

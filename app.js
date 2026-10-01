@@ -1,6 +1,6 @@
 import { noiseFrame } from './noise.js';
-import { content } from './content.js?v=elegant1';
-import { createHandGuide } from './hand-guide.js?v=elegant1';
+import { content } from './content.js?v=noise1';
+import { createHandGuide } from './hand-guide.js?v=noise1';
 const $ = id => document.getElementById(id);
 const grains = [1,2,4,8,16], colors = ['#0071e3','#0071e3','#0071e3','#0071e3'];
 const storageKey = 'magnetic-sand-real-hands-v2';
@@ -150,7 +150,7 @@ function translate(){
  for(const [id,key]of[['noise','canvasLabel'],['grain','grainLabel'],['rate','rateLabel'],['contrast','contrastLabel'],['science-close','closeScience']])$(id).setAttribute('aria-label',t(key));
  $('fullscreen').setAttribute('aria-label',t(document.fullscreenElement?'exitFullscreen':'fullscreen'));
  document.querySelector('.skip-link').textContent=state.language==='en'?'Skip to experiment':'跳到实验';
- document.querySelector('.brand').setAttribute('aria-label',state.language==='en'?'Magnetic Sand home':'磁性沙粒首页');
+ document.querySelector('.brand').setAttribute('aria-label',state.language==='en'?'Magnetic Sand Illusion home':'磁性沙粒错觉首页');
  document.querySelector('nav').setAttribute('aria-label',state.language==='en'?'Main navigation':'主要导航');
  $('fullscreen').title=t(document.fullscreenElement?'exitFullscreen':'fullscreen');
  document.querySelector('.experience').setAttribute('aria-label',state.language==='en'?'Illusion playground':'错觉互动乐园');
@@ -192,7 +192,7 @@ for(const id of['grain','rate','contrast'])$(id).addEventListener('input',()=>{
  if(id==='grain')resize();if(id==='contrast')drawNoise();
  if(id==='rate'){state.lastNoise=performance.now();state.measureStart=performance.now();state.delivered=0;state.measured=0;}updateStatus();
 });
-$('preset').addEventListener('click',restoreSettings);$('reset').addEventListener('click',restoreSettings);
+$('preset').addEventListener('click',restoreSettings);
 $('restart').addEventListener('click',()=>{stop();state.observations.fill(null);state.reportable.fill(false);save();selectMode(0);renderPassport();toast(t('restartToast'));});
 $('reveal').addEventListener('click',()=>{stop();stopTutorial();state.revealed=!state.revealed;renderReveal();});
 for(const id of['science-open','science-more'])$(id).addEventListener('click',()=>{stop();stopTutorial();$('science-dialog').showModal();});
