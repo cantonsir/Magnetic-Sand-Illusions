@@ -1,6 +1,6 @@
 import { noiseFrame } from './noise.js';
-import { content } from './content.js?v=perspective1';
-import { createHandGuide } from './hand-guide.js?v=perspective1';
+import { content } from './content.js?v=fullscreen1';
+import { createHandGuide } from './hand-guide.js?v=fullscreen1';
 const $ = id => document.getElementById(id);
 const grains = [1,2,4,8,16], colors = ['#0071e3','#0071e3','#0071e3','#0071e3'];
 const storageKey = 'magnetic-sand-real-hands-v2';
@@ -174,7 +174,12 @@ function restoreSettings(){
 $('tutorial-toggle').addEventListener('click',toggleTutorial);
 for(let i=0;i<3;i++)$('tutorial-phase-'+i).addEventListener('click',()=>{stop();stopTutorial();state.tutorialProgress=[0,.5,1][i];renderTutorial();});
 $('guide-try').addEventListener('click',()=>{start();$('experiment').scrollIntoView({block:'start',behavior:'auto'});});
-$('gate-tutorial').addEventListener('click',()=>{state.tutorialProgress=0;if(state.tutorialPlaying)stopTutorial();toggleTutorial();$('hand-guide-card').scrollIntoView({block:'center',behavior:'auto'});});
+$('gate-tutorial').addEventListener('click',async()=>{
+ if(document.fullscreenElement===$('experiment')){
+  try{await document.exitFullscreen();}catch{toast(t('exitForGuide'));return;}
+ }
+ state.tutorialProgress=0;if(state.tutorialPlaying)stopTutorial();toggleTutorial();$('hand-guide-card').scrollIntoView({block:'center',behavior:'auto'});
+});
 $('start').addEventListener('click',start);$('still-start').addEventListener('click',()=>{setDynamic(false);start();});
 $('play').addEventListener('click',()=>state.running?stop():start());$('quick-stop').addEventListener('click',()=>stop());
 $('dynamic').addEventListener('click',()=>setDynamic(true));$('static').addEventListener('click',()=>setDynamic(false));

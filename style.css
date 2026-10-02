@@ -34,7 +34,6 @@ h1{font-size:clamp(48px,5.4vw,72px);font-weight:600;letter-spacing:-3px;line-hei
 .science-teaser{display:flex;align-items:center;gap:50px;padding:70px 0 65px;scroll-margin-top:40px}.science-teaser .eyebrow{font-size:11px}.science-teaser h2{font-size:36px;letter-spacing:-1.3px;font-weight:600;line-height:1.13;margin:0 0 18px}.science-teaser p:not(.eyebrow){font-size:15px;color:var(--muted);line-height:1.75;max-width:650px;margin:0}.science-teaser .secondary-button{margin-left:auto;white-space:nowrap;background:transparent}
 footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #dedee2;padding-top:25px;padding-bottom:32px;font-size:11px;color:var(--muted);line-height:1.6}footer>div{display:flex;gap:20px;flex-wrap:wrap}footer a:hover{color:var(--text);text-decoration:underline}.footer-divider{margin:0 10px;color:#b3b3ba}
 dialog{background:#fff;color:var(--text);border:0;border-radius:26px;max-width:760px;width:calc(100% - 32px);padding:42px;max-height:85vh;box-shadow:0 20px 100px #00000026}dialog::backdrop{background:#16161c70;backdrop-filter:blur(8px)}dialog h2{font-size:34px;font-weight:600;letter-spacing:-1px;line-height:1.15;margin:14px 0 30px}.dialog-close{position:absolute;right:15px;top:15px;background:#f0f0f2}#science-content p,dialog p{font-size:15px;line-height:1.8;color:#4d4d52}dialog h3{font-weight:600;color:var(--text);font-size:18px;margin-top:30px}dialog a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.reveal-panel{padding:24px;border-top:1px solid var(--line);background:#f5f8fc}.reveal-panel h3{font-size:18px;font-weight:600;letter-spacing:-.3px;margin:0 0 12px}.reveal-panel p{font-size:14px;line-height:1.75;color:#4d4d52;margin:0 0 12px}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#fff;color:var(--text);border:1px solid #dddde2;border-radius:18px;padding:16px 24px;font-size:14px;line-height:1.5;z-index:100;box-shadow:0 8px 40px #0000001f;max-width:min(540px,90vw);text-align:center}
-.experiment-panel:fullscreen{display:flex;flex-direction:column;width:100vw;height:100vh;border:0;border-radius:0;background:#fff}.experiment-panel:fullscreen .stage{height:auto;flex:1;min-height:180px}.experiment-panel:fullscreen .noise-viewport{max-width:1100px}.experiment-panel:fullscreen .stage-gate{padding:30px}.experiment-panel:fullscreen .signal-strip,.experiment-panel:fullscreen .reveal-panel{display:none}
 @media(min-width:1500px){.stage{height:480px}}
 @media(max-width:1180px){.site-header,main,footer{padding-left:32px;padding-right:32px}.lab-grid{grid-template-columns:minmax(0,1fr) 350px;gap:18px}.guide-panel{padding:21px}.mode-tab{padding:13px 11px;gap:9px}.mode-tab b{font-size:14px}.mode-tab small{font-size:10px}.stage{height:445px}.stage-caption{display:none}.stage-gate{padding:26px;gap:16px}.stage-gate h2{font-size:26px}.transport{padding:16px;gap:9px}.signal-strip{padding:15px 16px}.signal-strip .text-button{white-space:normal;min-width:100px;text-align:right}.observation{padding:21px}.next-button{max-width:150px}.passport{flex-wrap:wrap}.passport>div:first-child{flex:1;min-width:300px}.stamps{margin-left:0}.passport-count{margin-left:auto}}
 @media(max-width:900px){.intro{padding:52px 0}.intro-copy{font-size:18px}.lab-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"experiment" "guide" "observation";gap:22px}.stage{height:450px}.stage-caption{display:block}.guide-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 30px;padding:28px}.guide-top,.guide-panel h2,.guide-subtitle{grid-column:1/-1}.movement-card{grid-column:1;grid-row:4/7;align-self:start}.tutorial-note{grid-column:1;grid-row:7/10;align-self:start}.instruction-details{grid-column:2;grid-row:4}.guide-try{grid-column:2;grid-row:5;align-self:start}.attention-card{grid-column:2;grid-row:6}.adaptation-note,.condition-note{grid-column:2}.observation-options{grid-template-columns:repeat(4,minmax(0,1fr))}.section-heading{gap:25px}.section-heading h2{font-size:29px}.section-description{max-width:290px}.mode-tabs{gap:3px}.mode-tab{display:block;padding:12px;text-align:center}.mode-number{font-size:10px;margin:0 0 6px;display:block}.tab-check{position:absolute;right:10px;top:10px}.mode-tab small{font-size:10px}.mode-tab b{font-size:14px}.sliders{gap:30px}.science-teaser h2{font-size:31px}footer{flex-direction:column;gap:12px}}
@@ -127,16 +126,24 @@ dialog{background:#fff;color:var(--text);border:0;border-radius:26px;max-width:7
   .segmented button{min-height:44px}
   input[type=range]{height:44px}
 }
-.experiment-panel:fullscreen{width:100%;height:100vh;height:100dvh;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);overflow:auto}
-.experiment-panel:fullscreen .stage{min-height:0}
-.experiment-panel:fullscreen .stage-toolbar,.experiment-panel:fullscreen .transport{flex-shrink:0}
 @media(max-width:600px),(hover:none) and (pointer:coarse){.stage:after{content:attr(data-touch-help)}}
+
+/* Fullscreen is a full-viewport noise field; controls float over the display. */
+.experiment-panel:fullscreen{position:relative;display:block;width:100%;height:100vh;height:100dvh;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;overflow:hidden;background:#101113}
+.experiment-panel:fullscreen .stage,.experiment-panel:fullscreen .stage.is-ready{position:absolute;z-index:0;inset:0;width:100%;height:100%;min-height:0;margin:0;padding:0;border-radius:0}
+.experiment-panel:fullscreen .noise-viewport,.experiment-panel:fullscreen .stage.is-ready .noise-viewport{position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0;border:0;border-radius:0}
+.experiment-panel:fullscreen .stage:after,.experiment-panel:fullscreen .signal-strip,.experiment-panel:fullscreen .reveal-panel{display:none}
+.experiment-panel:fullscreen .stage-toolbar{position:absolute;z-index:3;top:max(14px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));display:flex;min-height:0;padding:0;margin:0;gap:0}
+.experiment-panel:fullscreen .stage-toolbar>span,.experiment-panel:fullscreen #quick-stop{display:none!important}
+.experiment-panel:fullscreen #fullscreen{width:44px;height:44px;margin:0;background:#fff;color:#1d1d1f;box-shadow:0 2px 12px #0003}
+.experiment-panel:fullscreen>.transport{position:absolute;z-index:3;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:8px;width:max-content;max-width:calc(100% - 28px);margin:0;padding:7px;border:1px solid #e5e5e7;border-radius:32px;background:#fff;box-shadow:0 3px 18px #0003}
+.experiment-panel:fullscreen .stage.is-ready+.transport{display:none}
+.experiment-panel:fullscreen .play-button{width:auto;min-width:112px;min-height:44px;padding:10px 14px;font-size:13px;flex-shrink:0}
+.experiment-panel:fullscreen .segmented{margin:0;flex-shrink:0}
+.experiment-panel:fullscreen .segmented button{min-height:44px;padding:8px 11px;font-size:12px}
+.experiment-panel:fullscreen .stage-gate,.experiment-panel:fullscreen .stage.is-ready .stage-gate{position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:74px 24px max(28px,env(safe-area-inset-bottom));overflow-y:auto;justify-content:safe center}
+.experiment-panel:fullscreen .stage-gate .text-button{min-height:44px}
 @media(max-height:600px) and (orientation:landscape){
-  .experiment-panel:fullscreen .stage-toolbar{min-height:44px;padding:0 12px}
-  .experiment-panel:fullscreen .transport{padding:6px 12px;gap:8px}
-  .experiment-panel:fullscreen .stage{padding:8px 12px 25px}
-  .experiment-panel:fullscreen .stage:after{bottom:6px}
-  .experiment-panel:fullscreen .stage.is-ready{min-height:0}
-  .experiment-panel:fullscreen .stage-gate{position:absolute;min-height:0;padding:20px;justify-content:flex-start;gap:12px}
+  .experiment-panel:fullscreen .stage-gate,.experiment-panel:fullscreen .stage.is-ready .stage-gate{justify-content:flex-start;padding:22px 76px max(28px,env(safe-area-inset-bottom));gap:12px}
   .experiment-panel:fullscreen .gate-symbol{display:none}
 }
