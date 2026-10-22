@@ -1,87 +1,110 @@
-# Magnetic-Sand-Illusions
+# Magnetic Sand Illusions
 
-This repository contains the code and resources for generating noise videos and analyzing data from the research paper _"Magnetic Sand Illusions"_ by [Shimojo et al., BioRxiv 2024](https://www.biorxiv.org/content/10.1101/2024.07.03.598775v2). The project explores the visual and perceptual phenomena of "magnetic sand" illusions, revealing how certain noise patterns can evoke illusionary motion.
+Code, analysis notebooks, and demonstrations accompanying **“Magnetic sand”: Illusions of interactivity** by Shimojo et al. (*Journal of Vision*, 2026).
 
-A demo of the **Magnetic Sand Illusion** is available [here](https://sites.google.com/view/magneticsand).
+**[Explore the interactive demo · English / 中文](https://cantonsir.github.io/Magnetic-Sand-Illusions/)** · **[Read the paper](https://doi.org/10.1167/jov.26.5.3)**
 
-## Table of Contents
+Move your hand near a display of random visual noise. The noise may appear to follow your movements, leave traces, or move toward and away from your fingers. The display is generated independently of your actions: the apparent interaction is a perceptual illusion.
 
-- [Usage](#usage)
-- [Data and Analysis](#data-and-analysis)
-- [Files and Structure](#files-and-structure)
-- [License](#license)
+## Interactive demo
 
+The browser demo guides you through four hand movements. Watch the separate movement guide, then try the action with **your own hand** in front of the noise display—or behind it for the hidden-hand task.
 
+| Experience | Illusion subtype | Movement |
+| --- | --- | --- |
+| Leave a trace | Iconic trace | Slowly trace a shape with a fingertip close to the screen. |
+| Open & close | Attraction / repulsion | Open your fingers as you approach the screen; close them as you pull away. |
+| The visible hand | Visible action capture | Move an open hand slowly from side to side near the screen. |
+| The hidden hand | Invisible action capture | Reach behind the screen from the side. Keep the hand horizontal, palm facing you, and move it up and down while it stays out of sight. |
 
-## Usage
+The demo includes:
 
-This repository provides Jupyter Notebooks and Python scripts to generate noise videos and analyze the experimental data. Below are instructions for running the key components:
+- English and Simplified Chinese instructions, with separate animated movement guides.
+- Fullscreen noise that fills the display edge to edge, with floating playback and exit controls.
+- Dynamic and still noise, plus grain-size, refresh-rate, and contrast controls.
+- Responsive phone layouts and a local record of which experiences you have tried.
 
-1. **Noise Video Generation:**
+Start the noise, enter fullscreen, and follow the selected hand movement. Use the play/pause button, **Space** to play or pause, or **Esc** to stop. Compare dynamic and still noise and record what you notice; seeing no change is also a valid observation. If flickering is uncomfortable, pause and use the still-noise option.
 
-   To generate noise videos with different parameter combinations (e.g., varying cell size and temporal frequency), use the provided notebook:
-   
-   [Magnetic Sand Illusion Video Generator](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Videos/Magnetic_sand_illusion.ipynb)
+The actual stimulus contains random noise, with no gray dot or simulated hand. It does not use a camera or track your hand. This is an educational demonstration; screen size, pixel density, and refresh rate vary across devices, so it does not reproduce calibrated laboratory viewing conditions.
 
-   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Videos/Magnetic_sand_illusion.ipynb)
+The demo runs without Google services, external fonts, analytics, or an account. Availability still depends on your network. The [original research demonstrations](https://sites.google.com/view/magneticsand/home) remain available separately on Google Sites.
 
-2. **Data Analysis:**
+### Run the demo locally
 
-   The following Jupyter Notebooks provide a detailed analysis of different psychophysics experiments:
+The static website is published from the [`codex/magnetic-sand-demo` branch](https://github.com/cantonsir/Magnetic-Sand-Illusions/tree/codex/magnetic-sand-demo). To run that version locally with Python installed:
 
-   - **Sensitivity to Parameters (Cell Size and Temporal Frequency)**:
-   
-     This notebook explores how changes in parameters like cell size and temporal frequency affect perception:
-   
-     [Parameter Sensitivity Notebook](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Parameter_Space.ipynb)
+```sh
+git clone --branch codex/magnetic-sand-demo --single-branch https://github.com/cantonsir/Magnetic-Sand-Illusions.git magnetic-sand-demo
+cd magnetic-sand-demo
+python -m http.server 4173
+```
 
-        [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Parameter_Space.ipynb)
-   
-     ### Mean Illusions
-     ![Mean Illusions](Figure/illusions_mean.svg)
+Open [localhost:4173](http://localhost:4173/). The demo needs no package installation or build step. Serve it over HTTP rather than opening `index.html` directly, because it uses JavaScript modules.
 
-     ### Perception Maps
-     ![Perception Maps](Figure/Perception_maps.svg)
+## Research paper and citation
 
-     ### Trajectories by Illusion
-     ![Trajectories by Illusion](Figure/Trajectories_by_Illusion.svg)
-   
-   - **Comparison of Dynamic vs. Static Noises**:
-   
-     This notebook compares participants' reactions to dynamic and static noise patterns:
-   
-     [Dynamic vs. Static Notebook](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Statics_vs_Dynamics.ipynb)
+Please cite the published paper when using this work:
 
-        [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Statics_vs_Dynamics.ipynb)
+Shimojo, S., Zheng, S., Shimojo, K., Shimojo, E., & Wu, D.-A. (2026). “Magnetic sand”: Illusions of interactivity. *Journal of Vision, 26*(5), 3. [https://doi.org/10.1167/jov.26.5.3](https://doi.org/10.1167/jov.26.5.3)
 
-     ![Dynamics vs Statics](Figure/Dynamics_vs_statics_RM_bootstrapCI.svg)
-   
-   - **Self Action vs. Observing Others**:
-   
-     This notebook examines differences between self-action (moving) and observing others' movement:
-   
-     [Self vs. Other Notebook](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Self_vs_Other.ipynb)
+```bibtex
+@article{shimojo2026magnetic,
+  author  = {Shimojo, Shinsuke and Zheng, Shengjie and Shimojo, Kensuke and Shimojo, Eiko and Wu, Daw-An},
+  title   = {"Magnetic sand": Illusions of interactivity},
+  journal = {Journal of Vision},
+  year    = {2026},
+  volume  = {26},
+  number  = {5},
+  pages   = {3},
+  doi     = {10.1167/jov.26.5.3},
+  url     = {https://doi.org/10.1167/jov.26.5.3}
+}
+```
 
-        [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/Self_vs_Other.ipynb)   
-     ![Self vs Other](Figure/Self_vs_Other.svg)
+The [2024 bioRxiv preprint](https://www.biorxiv.org/content/10.1101/2024.07.03.598775v2) is retained here for publication history; the citation above refers to the published journal article.
 
-## Data and Analysis
+## Research code and analysis
 
-All experimental data, data preprocessing, and visualizations are included in the Jupyter Notebooks provided in the repository. These notebooks include:
+The `main` branch contains the research notebooks and figures. You can open the notebooks locally in Jupyter; Google Colab links are provided as an optional alternative. See [requirements.txt](requirements.txt) for Python dependencies and each notebook for its input paths and analysis details.
 
-- Code for generating noise videos using varying parameters.
-- Data analysis from psychophysics experiments, studying the perception of noise patterns and illusionary motion.
-- Visualizations to interpret the results and compare conditions across experiments.
+| Notebook | Purpose | Optional Colab |
+| --- | --- | --- |
+| [Noise video generator](Videos/Magnetic_sand_illusion.ipynb) | Generate noise videos with different cell sizes and temporal frequencies. | [Open in Colab](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Videos/Magnetic_sand_illusion.ipynb) |
+| [Parameter sensitivity](Notebook/01_Parameter_Space.ipynb) | Explore how cell size and temporal frequency affect illusion ratings. | [Open in Colab](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/01_Parameter_Space.ipynb) |
+| [Dynamic vs. static noise](Notebook/02_Statics_vs_Dynamics.ipynb) | Compare ratings across dynamic and static noise conditions. | [Open in Colab](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/02_Statics_vs_Dynamics.ipynb) |
+| [Self-action vs. observing others](Notebook/03_Self_vs_Other.ipynb) | Compare performing a movement with observing another person's movement. | [Open in Colab](https://colab.research.google.com/github/cantonsir/Magnetic-Sand-Illusions/blob/main/Notebook/03_Self_vs_Other.ipynb) |
 
-## Files and Structure
+### Parameter sensitivity
 
-Here is an overview of the main directories and files in the repository:
+**Mean illusion ratings**
 
-- **Videos/**: Contains Jupyter Notebooks to generate the noise videos used in the experiments.
-- **Notebook/**: Contains Jupyter Notebooks for data analysis and visualizations.
-- **Figure/**: Contains images and visualizations from the experiments, including results from the analysis notebooks.
+![Mean illusion ratings](Figure/illusions_mean.svg)
 
+**Perception maps**
+
+![Perception maps](Figure/Perception_maps.svg)
+
+**Trajectories by illusion**
+
+![Trajectories by illusion](Figure/Trajectories_by_Illusion.svg)
+
+### Dynamic vs. static noise
+
+![Dynamic versus static noise](Figure/Dynamics_vs_statics_RM_bootstrapCI.svg)
+
+### Self-action vs. observing others
+
+![Self-action versus observing others](Figure/Self_vs_Other.svg)
+
+## Repository structure
+
+- [`Videos/`](Videos/): noise-video generation notebook.
+- [`Notebook/`](Notebook/): analysis notebooks.
+- [`Figure/`](Figure/): research figures and visualizations.
+- [`requirements.txt`](requirements.txt): Python dependencies for the research code.
+- [`codex/magnetic-sand-demo`](https://github.com/cantonsir/Magnetic-Sand-Illusions/tree/codex/magnetic-sand-demo): separate branch containing the public website's static files.
 
 ## License
 
-This project is licensed under the terms of the [LICENSE.txt](LICENSE.txt).
+The repository code is released under the [MIT license](LICENSE.txt). Please also cite the research paper when using the work.
