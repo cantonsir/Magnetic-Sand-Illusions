@@ -1,8 +1,9 @@
 # Magnetic Sand Illusions
 
-Code, analysis notebooks, and demonstrations accompanying **“Magnetic sand”: Illusions of interactivity** by Shimojo et al. (*Journal of Vision*, 2026).
+Code, analysis notebooks, and demonstrations accompanying **[“Magnetic sand”: Illusions of interactivity](https://doi.org/10.1167/jov.26.5.3)** by Shimojo et al. (*Journal of Vision*, 2026).
 
-**[Explore the interactive demo · English / 中文](https://cantonsir.github.io/Magnetic-Sand-Illusions/)** · **[Read the paper](https://doi.org/10.1167/jov.26.5.3)**
+- **[Interactive demo (GitHub Pages)](https://cantonsir.github.io/Magnetic-Sand-Illusions/)**
+- **[Original demonstrations (Google Sites)](https://sites.google.com/view/magneticsand)**
 
 Move your hand near a display of random visual noise. The noise may appear to follow your movements, leave traces, or move toward and away from your fingers. The display is generated independently of your actions: the apparent interaction is a perceptual illusion.
 
@@ -28,7 +29,7 @@ Start the noise, enter fullscreen, and follow the selected hand movement. Use th
 
 The actual stimulus contains random noise, with no gray dot or simulated hand. It does not use a camera or track your hand. This is an educational demonstration; screen size, pixel density, and refresh rate vary across devices, so it does not reproduce calibrated laboratory viewing conditions.
 
-The demo runs without Google services, external fonts, analytics, or an account. Availability still depends on your network. The [original research demonstrations](https://sites.google.com/view/magneticsand/home) remain available separately on Google Sites.
+The interactive demo on GitHub Pages runs without Google services, external fonts, analytics, or an account. Availability still depends on your network.
 
 ### Run the demo locally
 
